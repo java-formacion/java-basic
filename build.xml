@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<project name="HelloWorld" default="empaquetar">
+		
+	<target name="compilar">
+		<echo message="Compilamos"/>			
+	</target>
+	
+	<target name="test" depends="compilar">
+		<echo message="Lanzamos Test Junit"/>			
+	</target>
+	
+	<target name="javadoc" depends="test">
+			<echo message="Documentamos con javaDoc"/>			
+	</target>	
+	
+	<target name="empaquetar" depends="javadoc">
+		<echo message="Generado libreria .jar"/>			
+	</target>
+	
+</project>

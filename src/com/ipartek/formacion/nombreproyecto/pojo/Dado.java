@@ -19,11 +19,14 @@ public class Dado {
 						"Ekaitz",
 						"Aitor"};
 	
+	
+	
 	/**
 	 * Genera numero aleatorio
 	 * @return <code>int</code> numero entre 0 y longitud del array aAlumnos
 	 */
 	public static int generarNumAleatorio()	{
+		
 		return (int) (Math.random()*aAlumnos.length);
 	}
 
