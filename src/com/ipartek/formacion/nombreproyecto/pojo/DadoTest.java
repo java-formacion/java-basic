@@ -1,10 +1,8 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class DadoTest {
 
