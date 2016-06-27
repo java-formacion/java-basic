@@ -15,7 +15,16 @@ public class CandidatoTest {
 		assertEquals("AndoniLunaMoreno", Candidato.capitalizarString("andoni luna moreno"));
 		assertEquals("AndoniLunaMoreno", Candidato.capitalizarString("ANDONI luna MORENO"));
 		assertEquals(null, Candidato.capitalizarString(null));
+		assertEquals("Andoni-LunaMoreno", Candidato.capitalizarString("ANDONI-luna MORENO"));
 		assertEquals("AndoniLunaMoreno", Candidato.capitalizarString("ANDONI  luna MORENO"));
 	}
-
+	
+	@Test
+	public void testCandidato() {
+		Candidato c = new Candidato("manolo", "11111111H");
+		
+		assertEquals("Manolo",c.getNombre());
+		//TODO resto de atributos
+	}
+	
 }

@@ -27,6 +27,12 @@ public class Candidato {
 		this.apellido2 = "anonimo";
 		this.dni = "anonimo";
 	}
+	public Candidato(String nombre, String dni) {
+		super();
+		//nombre, apellido1 y apellido2 siempre esten bien capitalizados
+		this.nombre = "anonimo";
+		this.dni = "anonimo";
+	}
 
 	/**
 	 * recuperamos el nombre del objeto
@@ -71,6 +77,12 @@ public class Candidato {
 		this.dni = dni;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "Candidato [nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", dni=" + dni
+				+ "]";
+	}
 	/**
 	 * Función para capitalizar el String pasado como parametro
 	 * 
