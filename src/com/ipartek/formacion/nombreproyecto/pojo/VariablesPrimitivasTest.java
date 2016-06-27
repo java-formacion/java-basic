@@ -39,8 +39,8 @@ public class VariablesPrimitivasTest {
 		
 		//Capitulo5 pag.77 Operaciones con variables.
 		//si x=true nos devuelve un 5 sino un 9
-		int x = (true)?5:9;
-		assertEquals ("Operador ternario mal usado", 5, x);
+		//int x = (true)?5:9;
+		//assertEquals ("Operador ternario mal usado", 5, x);
 		
 	
 	}
