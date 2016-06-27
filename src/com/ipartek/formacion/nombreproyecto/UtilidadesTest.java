@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
+
 public class UtilidadesTest {
 
 	//test Dia Semana
@@ -53,6 +55,20 @@ public class UtilidadesTest {
 		assertEquals("Borja Manso", Utilidades.capitalizar("BORJA MANSO"));
 		assertEquals("Borja Manso", Utilidades.capitalizar("borja mAnso"));
 		assertEquals("Borja Manso", Utilidades.capitalizar("Borja manso"));
+		
+	}
+	
+	//test varios
+	@Test
+	public void testVarios(){
+		Candidato c = new Candidato();
+		assertTrue ( c instanceof Candidato );
+		
+		Candidato c1 = new Candidato();
+		
+		assertNotEquals("No son iguales aunque lo parezcan", c, c1);
+		
+		assertFalse(c.equals(c1));
 		
 	}
 

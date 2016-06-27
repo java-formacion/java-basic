@@ -1,5 +1,7 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
+import com.ipartek.formacion.nombreproyecto.Utilidades;
+
 /**
  * Clase de tipo POJO para instanciar objetos que representan un Candidato
  * <br/>Los atributos de un Candidato:
@@ -21,78 +23,56 @@ public class Candidato {
 	private String apellido2;
 	private String dni;
 	
-	/**
-	 * Recuperamos el nombre del objeto
-	 * @return
-	 */
+	//Constructor por defecto
+	public Candidato(){
+		this.nombre = "";
+		this.apellido1 = "";
+		this.apellido2 = "";
+		this.dni = "";
+	}
+
+	//Constructor con parametros
+	public Candidato(String nombre, String dni) {
+		super();
+		this.nombre = nombre;
+		this.dni = dni;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
 
-	/**
-	 * Cambiamos el nombre pasandole un parametro
-	 * @param nombre <String> cadena de texto con el nombre del Candidato
-	 */
 	public void setNombre(String nombre) {
+		Utilidades.capitalizar(nombre);		
 		this.nombre = nombre;
 	}
 
-	
-	/**
-	 * Recuperamos el primer apellido del objeto
-	 * @return
-	 */
 	public String getApellido1() {
 		return apellido1;
 	}
 
-	/**
-	 * Cambiamos el primer apellido pasandole un parametro
-	 * @param apellido1 <String> cadena de texto con el primer apellido del Candidato
-	 */
 	public void setApellido1(String apellido1) {
+		Utilidades.capitalizar(apellido1);
 		this.apellido1 = apellido1;
 	}
-	
-	
-	/**
-	 *Recuperamos el segundo apellido del objeto 
-	 * @return
-	 */
+
 	public String getApellido2() {
 		return apellido2;
 	}
 
-	/**
-	 * Cambiamos el segundo apellido pasandole un parametro
-	 * @param apellido2 <String> cadena de texto del segundo apellido del Candidato
-	 */
 	public void setApellido2(String apellido2) {
+		Utilidades.capitalizar(apellido2);
 		this.apellido2 = apellido2;
 	}
 
-	/**
-	 * Recuperamos el dni del objeto
-	 * @return
-	 */
 	public String getDni() {
 		return dni;
 	}
 
-	/**
-	 * Cambiamos el dni pasandole un parametro
-	 * @param dni <String> cadena de texto del dni del Candidato
-	 */
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
-
-	//Constructor
-	public Candidato(){
-		this.nombre = "anonimo";
-		this.apellido1 = "apellido";
-		this.apellido2 = "apellido";
-		this.dni = "11111111A";
-	}
+	
+	
 	
 }
