@@ -28,11 +28,21 @@ public class Candidato {
 	private String apellido2;
 	private String dni;
 	
-	public Candidato(String nombre, String dni) {
+	//constructor por defecto
+	public Candidato(){
 		super();
+		this.nombre = "";
+		this.dni = "";
+		this.apellido1 = "";
+		this.apellido2 = "";
+	}
+	
+	//constructor con parametros
+	public Candidato(String nombre, String dni) {
+		super();	// this();  llamaría al constructor sin parámetros que hemos creado arriba
 		this.nombre = Utilidades.capitalizar(nombre);
 		this.dni = dni;
-		this.apellido1 = "";
+		//this.apellido1 = "";
 		this.apellido2 = "";
 	}
 

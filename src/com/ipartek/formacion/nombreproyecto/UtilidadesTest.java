@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
+
 public class UtilidadesTest {
 
 	@Test
@@ -38,6 +40,17 @@ public class UtilidadesTest {
 		assertEquals("Jose Ra+o De Juan", Utilidades.capitalizar("JOSE RA+O de JUAn    "));
 		
 		
+	}
+	@Test
+	public void testVarios(){
+		
+		Candidato c = new Candidato();
+		assertTrue(c instanceof Candidato);
+		
+		Candidato c1 = new Candidato();
+		
+		assertNotEquals(c,c1);  //no son iguales porque son dos objetos que apuntan a ubicaciones diferentes de memoria. para saber si son iguales utilizar clon
+		assertFalse(c.equals(c1));
 	}
 
 }
