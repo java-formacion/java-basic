@@ -74,37 +74,63 @@ public class Utilidades {
 	 *            {@code String} almacena el texto original</br>
 	 * @return String capitalizado
 	 */
-	//METODO CORRECTO (NO elimina espacios en medio de la cadena)
-	/*
-	 * public static String capitalizar(String cadena) { char[] chars =
-	 * cadena.toLowerCase().toCharArray(); boolean found = false; for (int i =
-	 * 0; i < chars.length; i++) { if (!found && Character.isLetter(chars[i])) {
-	 * chars[i] = Character.toUpperCase(chars[i]); found = true; } else if
-	 * (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') {
-	 * // You can add other chars here found = false; } } return
-	 * String.valueOf(chars); }
-	 */
+	// METODO CORRECTO (NO elimina espacios en medio de la cadena)
 
 	public static String capitalizar(String cadena) {
-		String resul = null;
-		
-		if (cadena != null) {
-
-			char[] chars = cadena.trim().toLowerCase().toCharArray();
-			StringBuffer sbCadenaFinal = new StringBuffer();
-			
-			for (int i = 0; i < chars.length; i++) {
-				if (Character.isWhitespace(chars[i])) {
-					if (chars[i+1] != ' '){
-						sbCadenaFinal = sbCadenaFinal.append(b)
-					}
-				} else if (Character.isWhitespace(chars[i]) || chars[i] == '.' || chars[i] == '\'' || chars[i] == '-') { // You can add other chars here
-					found = false;
-				}
+		char[] chars = cadena.trim().toLowerCase().toCharArray();
+		boolean found = false;
+		for (int i = 0; i < chars.length; i++) {
+			if (!found && Character.isLetter(chars[i])) {
+				chars[i] = Character.toUpperCase(chars[i]);
+				found = true;
+			} else if (Character.isWhitespace(chars[i]) || chars[i] == '.' || chars[i] == '\'' || chars[i] == '-') { // You
+				// can
+				// add
+				// other
+				// chars
+				// here
+				found = false;
 			}
-			resul = String.valueOf(chars);
 		}
-		return resul;
+		return String.valueOf(chars);
 	}
 
+
+	
+	
+	//CODIGO FATALMENTE INCORRECTO
+	/*
+	public static String capitalizar(String cadenaAcambiar) {
+		String resul = null;
+		if (cadenaAcambiar != null) {
+
+			char[] chars = cadenaAcambiar.trim().toLowerCase().toCharArray();
+			StringBuffer sbCadenaFinal = new StringBuffer();
+			boolean found = false;
+			
+			for (int i = 0; i < chars.length; i++) {
+				if (!found && Character.isLetter(chars[i])) {
+					chars[i] = Character.toUpperCase(chars[i]);
+					found = true;
+					sbCadenaFinal =  sbCadenaFinal.append(chars[i]);
+				} else if (Character.isWhitespace(chars[i]) || chars[i] == '.' || chars[i] == '\'' || chars[i] == '-') { // You
+					// can
+					// add
+					// other
+					// chars
+					// here
+					found = false;
+					sbCadenaFinal =  sbCadenaFinal.append( Character.toUpperCase(chars[i + 1]));
+				}
+			}		
+			
+
+			resul = sbCadenaFinal.toString();
+		}
+		return resul;
+}
+*/
+
+
+	
 }

@@ -43,8 +43,9 @@ public class UtilidadesTest {
 	@Test
 	public void testCapitalizar() {
 
-		assertEquals(null, Utilidades.capitalizar(null));
-		assertEquals("Borja-Manso", Utilidades.capitalizar("borja-manso"));
+		//assertEquals("Borja Manso", Utilidades.capitalizar("   borja   Manso   "));
+		assertEquals("Borja-Manso", Utilidades.capitalizar("borja-Manso"));
+		//assertEquals(null, Utilidades.capitalizar(null));
 		assertEquals("Borja Manso", Utilidades.capitalizar("Borja Manso"));
 		
 		assertEquals("Borja Manso", Utilidades.capitalizar("Borja Manso"));
@@ -52,7 +53,6 @@ public class UtilidadesTest {
 		assertEquals("Borja Manso", Utilidades.capitalizar("BORJA MANSO"));
 		assertEquals("Borja Manso", Utilidades.capitalizar("borja mAnso"));
 		assertEquals("Borja Manso", Utilidades.capitalizar("Borja manso"));
-		assertEquals("Borja Manso", Utilidades.capitalizar("   borja  Manso   "));
 		
 	}
 
