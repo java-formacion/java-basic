@@ -49,26 +49,33 @@ public class Utilidades {
 	 *            {@code String} almacena el texto original<br>
 	 * @return String capitalizado, null en caso de fallo
 	 */
-	public static String capitalizar(String cadenaAcambiar) {
-		String resul = null;
-		if (cadenaAcambiar != null) {
+	public static String capitalizar(String cadena) {
 
-			char[] cArrayCadena = cadenaAcambiar.trim().toLowerCase().toCharArray();
-			StringBuffer sbCadenaFinal = new StringBuffer();
-			
-			for (int i = 0; i < cArrayCadena.length; i++) {
-				if (cArrayCadena[i] == ' '){				
-					if ( cArrayCadena[i+1] != ' '){
-						sbCadenaFinal =  sbCadenaFinal.append( Character.toUpperCase(cArrayCadena[i + 1]));
-					}	
-				}else{					
-					sbCadenaFinal =  sbCadenaFinal.append(cArrayCadena[i]);
-				}	
+		String sCadena = null;
+		if (cadena!=null){
+			sCadena = "";
+			char[]cCadena = cadena.trim().toLowerCase().toCharArray();
+			boolean mayus = false;			
+			for (int i=0; i<cCadena.length; i++){				
+				if (i == 0){
+					sCadena += String.valueOf(Character.toUpperCase(cCadena[i]));		
+				}else if (mayus){
+					sCadena += String.valueOf(Character.toUpperCase(cCadena[i]));
+					mayus = false;
+				}
+				else if (cCadena[i] == ' ' && (cCadena[i+1]) != ' '){
+					sCadena += String.valueOf(cCadena[i]);
+					mayus = true;
+				}				
+				else if (cCadena[i] != ' '){
+					sCadena += String.valueOf(cCadena[i]);
+				}		
+				
 			}
-
-			resul = sbCadenaFinal.toString();
+			
 		}
-		return resul;
+		return sCadena;
+		
 
 	}
 
