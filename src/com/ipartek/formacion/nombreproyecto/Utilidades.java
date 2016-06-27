@@ -41,6 +41,11 @@ public class Utilidades {
 		}
 		return resultado;
 	}
+	
+	
+	public static String getDiaSemana(String dia ) {
+		return getDiaSemana( Integer.parseInt(dia));
+	}
 
 	/**
 	 * Capitaliza el String pasado como parametro<br>

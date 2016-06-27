@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
+
 public class UtilidadesTest {
 
 	@Test
@@ -26,7 +28,19 @@ public class UtilidadesTest {
 	
 	@Test
 	public void testVarios() {
-			assertEquals( "Ander", "   Ander    ".trim() );	
+		assertEquals( "Ander", "   Ander    ".trim() );
+		
+		
+		Candidato c = new Candidato();
+		assertTrue ( c instanceof Candidato ); 
+		
+		Candidato c1 = new Candidato();
+		
+		assertNotEquals("No son iguales, aunque lo parezcan", c, c1 );
+		
+		assertFalse( c.equals(c1) );
+		
+				
 	}
 	
 	@Test

@@ -21,11 +21,23 @@ public class Candidato {
 	private String apellido2;
 	private String dni;
 	
-	public Candidato(String nombre, String dni) {
+	//constructor por defecto
+	public Candidato(){
 		super();
+		this.nombre = "";
+		this.apellido1 = "";
+		this.apellido2 = "";
+		this.dni = "";		
+	}
+	
+	//constructor con parametros
+	public Candidato(String nombre, String dni) {
+		this();
 		this.nombre = nombre;
 		this.dni = dni;
 	}
+
+
 
 	public String getNombre() {
 		return nombre;
