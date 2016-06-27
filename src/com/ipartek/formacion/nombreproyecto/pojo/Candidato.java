@@ -32,6 +32,8 @@ public class Candidato {
 		super();
 		this.nombre = Utilidades.capitalizar(nombre);
 		this.dni = dni;
+		this.apellido1 = "";
+		this.apellido2 = "";
 	}
 
 	public String getNombre() {
@@ -55,7 +57,7 @@ public class Candidato {
 	}
 
 	public void setApellido2(String apellido2) {
-		this.apellido2 = apellido2;
+		this.apellido2 = Utilidades.capitalizar(apellido2);
 	}
 
 	public String getDni() {

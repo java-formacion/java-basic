@@ -84,7 +84,7 @@ public class Utilidades {
 	//		if (noCarac == false){
 				for (int i=0; i<cCadena.length; i++){
 				
-					if (i == 0){
+					if (i == 0 && cCadena[0] != ' '){
 						sCadena += String.valueOf(Character.toUpperCase(cCadena[i]));
 					}else if (mayus){
 						sCadena += String.valueOf(Character.toUpperCase(cCadena[i]));

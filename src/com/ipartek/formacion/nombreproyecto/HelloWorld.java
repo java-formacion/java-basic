@@ -10,13 +10,16 @@ public class HelloWorld {
 		
 		
 		//instanciar objeto<Candidato>
-		//Candidato objeto = new Candidato();
+		Candidato objeto = new Candidato("ekaitZ", "78999999K");
 		
 		//sin encapsular
 		//objeto.nombre = "Ander";
 		
 		//encapsulado el atributo
-		//objeto.setNombre("Ander");
+		objeto.setApellido1("aGUIrresarobe  ");
+		objeto.setApellido2("fernandez");
+		System.out.println(objeto.toString());
+		
 		
 		
 		//System.out.println("Hola " + objeto.nombre );
