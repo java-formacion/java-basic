@@ -75,28 +75,33 @@ public class Utilidades {
 			
 			char[]cCadena = cadena.trim().toLowerCase().toCharArray();
 			boolean mayus = false;
-			//for (int j=0;j<cCadena.length; j++){
-			//	if(!(cCadena[j] >= 'a' && cCadena[j] <= 'z' ) || (cCadena[j] >= 'A' && cCadena[j] <= 'Z' ) ){
-					
-					
-			//	}
-			//}
-			for (int i=0; i<cCadena.length; i++){
-				if (i == 0){
-					sCadena += String.valueOf(Character.toUpperCase(cCadena[i]));
-				}else if (mayus){
-					sCadena += String.valueOf(Character.toUpperCase(cCadena[i]));
-					mayus = false;
-				}
-				else if (cCadena[i] == ' ' && (cCadena[i+1]) != ' '){
-					sCadena += String.valueOf(cCadena[i]);
-					mayus = true;
-				}				
-				else if (cCadena[i] != ' '){
-					sCadena += String.valueOf(cCadena[i]);
-				}		
+	//		boolean noCarac = false;
+	//		for (int j=0;j<cCadena.length; j++){
+	//			if(!(cCadena[j] >= 'a' && cCadena[j] <= 'z' ) || (cCadena[j] >= 'A' && cCadena[j] <= 'Z' ) ){
+	//				noCarac = true;
+	//			}
+	//		}
+	//		if (noCarac == false){
+				for (int i=0; i<cCadena.length; i++){
 				
-			}
+					if (i == 0){
+						sCadena += String.valueOf(Character.toUpperCase(cCadena[i]));
+					}else if (mayus){
+						sCadena += String.valueOf(Character.toUpperCase(cCadena[i]));
+						mayus = false;
+					}
+					else if (cCadena[i] == ' ' && (cCadena[i+1]) != ' '){
+						sCadena += String.valueOf(cCadena[i]);
+						mayus = true;
+					}				
+					else if (cCadena[i] != ' '){
+						sCadena += String.valueOf(cCadena[i]);
+					}
+				}
+				
+	//		}else{
+	//			sCadena = "la cadena contiene valores que no son válidos";
+	//		}
 			
 		}else{
 			sCadena = "la cadena no contiene nada";

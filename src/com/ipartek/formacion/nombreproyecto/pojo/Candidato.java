@@ -21,27 +21,33 @@ import com.ipartek.formacion.nombreproyecto.Utilidades;
  */
 public class Candidato {
 	
-	
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
 
 	// propiedad
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
 	private String dni;
+	
+	public Candidato(String nombre, String dni) {
+		super();
+		this.nombre = Utilidades.capitalizar(nombre);
+		this.dni = dni;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = Utilidades.capitalizar(nombre);
+	}
 
 	public String getApellido1() {
 		return apellido1;
 	}
 
 	public void setApellido1(String apellido1) {
-		this.apellido1 = apellido1;
+		this.apellido1 = Utilidades.capitalizar(apellido1);
 	}
 
 	public String getApellido2() {
@@ -49,7 +55,7 @@ public class Candidato {
 	}
 
 	public void setApellido2(String apellido2) {
-		this.apellido2 = Utilidades.capitalizar(apellido2);
+		this.apellido2 = apellido2;
 	}
 
 	public String getDni() {
@@ -60,27 +66,11 @@ public class Candidato {
 		this.dni = dni;
 	}
 
-	// constructor:
-	public Candidato() {
-		this.nombre = "";
-		this.apellido1 = "";
-		this.apellido2 = "";
-		this.dni = "";
-	}
-	
-
 	@Override
 	public String toString() {
-		return  nombre +" "+ apellido1 +" "+ apellido2;
+		return "Candidato [nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", dni=" + dni
+				+ "]";
 	}
-
-	public String getNomApellidos(){
 	
-		String aNomApellidos =  this.toString();
-		
-		
-		return aNomApellidos; 
-		
-		
-	}
+
 }
