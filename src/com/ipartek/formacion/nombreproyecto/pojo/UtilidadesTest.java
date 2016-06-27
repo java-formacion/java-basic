@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.ipartek.formacion.nombreproyecto.Utilidades;
+import com.ipartek.formacion.nombreproyecto.pojo.Utilidades;
 import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
 import com.mysql.jdbc.EscapeTokenizer;
 
