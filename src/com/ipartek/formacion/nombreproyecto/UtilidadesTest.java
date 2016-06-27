@@ -27,11 +27,15 @@ public class UtilidadesTest {
 	@Test
 	public void testConcatenarConMayusIniciales(){
 		
-		assertEquals("Jose Ramo de Juan", Utilidades.capitalizar(null));
-		assertEquals("Jose Ramo de Juan", Utilidades.capitalizar("Jose Ramo de Juan"));
-		assertEquals("Jose Ramo de Juan", Utilidades.capitalizar("jose Ramo de Juan"));
-		assertEquals("Jose Ramo de Juan", Utilidades.capitalizar(" Jose Ramo de Juan "));
-		assertEquals("Jose Ramo de Juan", Utilidades.capitalizar("Jose  Ramo de Juan"));
+		assertEquals("la cadena no contiene nada", Utilidades.capitalizar(null));
+		assertEquals("Jose Ramo De Juan", Utilidades.capitalizar("Jose Ramo de Juan"));
+		assertEquals("Jose Ramo De Juan", Utilidades.capitalizar("Jose Ramo   de Juan"));
+		assertEquals("Jo", Utilidades.capitalizar("jo"));
+		assertEquals("Jose Ramo De Juan", Utilidades.capitalizar(" Jose Ramo de Juan "));
+		assertEquals("Jose Ramo De Juan", Utilidades.capitalizar("Jose     Ramo de   Juan"));
+		assertEquals("Jose Ramo De Juan", Utilidades.capitalizar("Jose  Ramo de Juan    "));
+		assertEquals("Jose Ramo De Juan", Utilidades.capitalizar("JOSE RAMO de JUAn    "));
+		assertEquals("Jose Ra+o De Juan", Utilidades.capitalizar("JOSE RA+O de JUAn    "));
 		
 		
 	}

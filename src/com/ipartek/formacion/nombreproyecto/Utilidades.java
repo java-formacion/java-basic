@@ -62,27 +62,48 @@ public class Utilidades {
 		return sResultado;
 		
 	}
-	
+	/**
+	 * 
+	 * @param cadena
+	 * @return
+	 */
 	public static String capitalizar (String cadena){
 		
-		String resul = null;
 		
-		char[] cCadena = cadena.trim().toCharArray();
-		boolean mayus = true;
-		
-		for (int i=0; i<cCadena.length; i++){
-			if (mayus){
-				Character.toUpperCase(cCadena[i]);
-				mayus = false;
+		String sCadena = "";
+		if (cadena!=null){
+			
+			char[]cCadena = cadena.trim().toLowerCase().toCharArray();
+			boolean mayus = false;
+			//for (int j=0;j<cCadena.length; j++){
+			//	if(!(cCadena[j] >= 'a' && cCadena[j] <= 'z' ) || (cCadena[j] >= 'A' && cCadena[j] <= 'Z' ) ){
+					
+					
+			//	}
+			//}
+			for (int i=0; i<cCadena.length; i++){
+				if (i == 0){
+					sCadena += String.valueOf(Character.toUpperCase(cCadena[i]));
+				}else if (mayus){
+					sCadena += String.valueOf(Character.toUpperCase(cCadena[i]));
+					mayus = false;
+				}
+				else if (cCadena[i] == ' ' && (cCadena[i+1]) != ' '){
+					sCadena += String.valueOf(cCadena[i]);
+					mayus = true;
+				}				
+				else if (cCadena[i] != ' '){
+					sCadena += String.valueOf(cCadena[i]);
+				}		
+				
 			}
-			if (cCadena[i]==' '){
-				mayus = true;
-			}else {
-				Character.toLowerCase(cCadena[i]);
-			}			
+			
+		}else{
+			sCadena = "la cadena no contiene nada";
 			
 		}
-		return String.valueOf(resul);
+		return sCadena;
 		
 	}
+
 }
