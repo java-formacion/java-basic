@@ -43,7 +43,7 @@ public class Utilidades {
 	}
 
 	/**
-	 * Capitaliza el String pasado como parametro
+	 * Capitaliza el String pasado como parametro<br>
 	 * 
 	 * @param cadenaAcambiar
 	 *            {@code String} almacena el texto original<br>
