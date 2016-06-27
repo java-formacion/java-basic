@@ -22,10 +22,11 @@ public class Candidato {
 
 	// constructor
 	public Candidato() {
-		this.nombre = "anonimo";
-		this.apellido1 = "anonimo";
-		this.apellido2 = "anonimo";
-		this.dni = "anonimo";
+		super();
+		this.nombre = "";
+		this.apellido1 = "";
+		this.apellido2 = "";
+		this.dni = "";
 	}
 	public Candidato(String nombre, String dni) {
 		super();
