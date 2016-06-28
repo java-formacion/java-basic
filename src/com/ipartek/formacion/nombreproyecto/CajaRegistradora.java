@@ -52,9 +52,11 @@ public class CajaRegistradora {
 	private void calcular() {		
 		
 		float resto = this.pago - this.precio;
+		resto = Utilidades.round(resto, 2).floatValue();
 		for (int i = 0; i < BILLETES_MONEDAS.length; i++) {
 			aVueltas[i] = (int) (resto / BILLETES_MONEDAS[i]);
 			resto %= BILLETES_MONEDAS[i];
+			resto = Utilidades.round(resto,2).floatValue();
 		}		
 		
 	}
