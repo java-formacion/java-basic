@@ -10,7 +10,7 @@ public class CandidatoTest {
 	public void testCandidato() {
 		Candidato c = new Candidato("manolo", "xxxx");
 		
-		assertEquals("Manolo", c.getNombre();
+		assertEquals("Manolo", c.getNombre());
 		
 	}
 
