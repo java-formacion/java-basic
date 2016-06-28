@@ -1,5 +1,6 @@
 package com.ipartek.formacion.nombreproyecto;
 
+import com.ipartek.formacion.nombreproyecto.pojo.CajaRegistradora;
 import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
 import com.ipartek.formacion.nombreproyecto.pojo.Libro;
 import com.ipartek.formacion.nombreproyecto.pojo.Perro;
@@ -8,9 +9,16 @@ public class HelloWorld {
 
 	public static void main(String[] args) {
 		
+		//Caja Registradora
+		int[] aVueltas = null;		
+		float vueltas = 0.0f;
+		vueltas = CajaRegistradora.calcularVueltas(2000.0f, 1326.24f);
+		System.out.println(vueltas);
+		aVueltas = CajaRegistradora.calcularVueltasOptimas(2000.0f, 1326.24f);		
+		System.out.println(CajaRegistradora.imprimirVueltasOptimas(aVueltas));
 		
 		//instanciar objeto<Candidato>
-		Candidato objeto = new Candidato();
+		Candidato objeto = new Candidato("", "");
 		
 		//sin encapsular
 		//objeto.nombre = "Ander";

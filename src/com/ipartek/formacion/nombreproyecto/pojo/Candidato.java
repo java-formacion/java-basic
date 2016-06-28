@@ -17,40 +17,63 @@ public class Candidato {
 	
 	//atributos
 	private String nombre;
-	public String apellido1;
+	private String apellido1;
+	private String apellido2;
+	private String dni;
 	
-	
-	
-	/**
-	 * recuperamos el nombre del objeto
-	 * @return
-	 */
-	public String getNombre() {
-		return nombre;
-	}
-
-
-	/**
-	 * Cambiamos el nombre pasandole un parametro
-	 * @param nombre <String> cadena de texto con el nombre del Candidato
-	 */
-	public void setNombre(String nombre) {
-		
-		
-		this.nombre = nombre;
-	}
-
-
-	public String apellido2;
-	public String dni;
-	
-	
-	//constructor
+	//constructor por defecto
 	public Candidato(){
+		super();
 		this.nombre = "";
 		this.apellido1 = "";
 		this.apellido2 = "";
 		this.dni = "";
 	}
+	
+	//constructor con parámetros
+	public Candidato(String nombre, String dni) {
+		this();
+		this.nombre = Utilidades.capitalizar(nombre);
+		this.dni = dni;
+	 
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = Utilidades.capitalizar(nombre);
+	}
+
+	public String getApellido1() {
+		return apellido1;
+	}
+
+	public void setApellido1(String apellido1) {
+		this.apellido1 = Utilidades.capitalizar(apellido1);
+	}
+
+	public String getApellido2() {
+		return apellido2;
+	}
+
+	public void setApellido2(String apellido2) {
+		this.apellido2 = Utilidades.capitalizar(apellido2);
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+	
+	
+	
+
+	
+	
 	
 }

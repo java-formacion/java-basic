@@ -77,7 +77,17 @@ public class UtilidadesTest {
 
 	@Test
 	public void testVarios() {
+		
 			assertEquals( "Ander", "   Ander    ".trim() );	
+			
+			Candidato c = new Candidato();
+			assertTrue (c instanceof Candidato);
+			
+			Candidato c1 = new Candidato();
+			assertNotEquals("No son iguales aunque lo partezcan",c,c1);
+			
+			assertFalse(c.equals(c1));
+			
 	}
 	
 	

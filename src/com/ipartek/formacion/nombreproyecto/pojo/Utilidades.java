@@ -1,5 +1,7 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
+import java.math.BigDecimal;
+
 public class Utilidades {
 
 	public static String aDiasSemana[] = {"lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"};
@@ -155,4 +157,14 @@ public class Utilidades {
 			
 
 		}
+		
+		/**
+		 * Redondear a dos decimales 
+		 * @param d
+		 * @param decimalPlace
+		 * @return
+		 */
+		 public static float round(float d, int decimalPlace) {
+	         return BigDecimal.valueOf(d).setScale(decimalPlace,BigDecimal.ROUND_HALF_UP).floatValue();
+	    }
 }
