@@ -1,7 +1,5 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-import sun.applet.Main;
-
 public class VehiculoElectrico extends Vehiculo {
 
 	private float capacidadBateria;
@@ -12,6 +10,10 @@ public class VehiculoElectrico extends Vehiculo {
 		capacidadBateria = 150f;
 	}
 
+	public VehiculoElectrico(String nombre) {
+		super(nombre);
+	}
+
 	public float getCapacidadBateria() {
 		return capacidadBateria;
 	}
@@ -20,13 +22,14 @@ public class VehiculoElectrico extends Vehiculo {
 		this.capacidadBateria = capacidadBateria;
 	}
 	
+	/*
 	public static void main(String[] args){
 		
 		VehiculoElectrico ve = new VehiculoElectrico();
 		ve.getNumPlazas();
 		System.out.println(ve.getNumPlazas());
 	}
-	
+	*/
 	
 	
 }

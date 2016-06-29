@@ -29,6 +29,7 @@ public class VariablesPrimitivasTest {
 		
 		assertEquals(127, Byte.MAX_VALUE);
 		
+		@SuppressWarnings("unused")
 		int x = (true)?5:9; //Operador ternario, para asignar valores. Si x es true then asignar valor de 5, else 9.
 		assertEquals("Operador ternario mal usado", 5, x);
 		

@@ -2,19 +2,34 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 public class VehiculoDiesel extends Vehiculo {
 	
-	private float combustible;
+	/**
+	 * Litros minimos (int){@code deposito}
+	 */
+	public final static int DEPOSITO_MINIMO = 50;
+	
+	/**
+	 * Capacidad en Litros del deposito del combustible
+	 */
+	private int deposito;
 
+	/**
+	 * Lo mismo que el Padre, pero con deposito = DEPOSITO_MINIMO en litros
+	 */
 	public VehiculoDiesel() {
 		super();
-		combustible = 10f;
+		this.deposito = DEPOSITO_MINIMO;
 	}
 
-	public float getCombustible() {
-		return combustible;
+	public VehiculoDiesel(String nombre) {
+		super(nombre);
 	}
 
-	public void setCombustible(float combustible) {
-		this.combustible = combustible;
+	public float getDeposito() {
+		return deposito;
+	}
+
+	public void setDeposito(int deposito) {
+		this.deposito = deposito;
 	}
 	
 	
