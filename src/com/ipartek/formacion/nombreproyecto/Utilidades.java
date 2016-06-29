@@ -1,6 +1,6 @@
 package com.ipartek.formacion.nombreproyecto;
 
-
+import java.math.BigDecimal;
 
 public class Utilidades {
 
@@ -110,5 +110,11 @@ public class Utilidades {
 		return sCadena;
 		
 	}
+	
+	public static BigDecimal round(float d, int decimalPlace) {
+        BigDecimal bd = new BigDecimal(d);
+        bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_UP);       
+        return bd;
+}
 
 }
