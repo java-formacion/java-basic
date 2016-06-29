@@ -22,6 +22,11 @@ public class VehiculoDiesel extends Vehiculo {
 	}
 
 
+	public VehiculoDiesel(String nombre) {
+		super(nombre);
+	}
+
+
 	public int getDeposito() {
 		return deposito;
 	}

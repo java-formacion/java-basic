@@ -14,6 +14,12 @@ public class Vehiculo {
 		potencia = 0f;
 		dimensiones = 0f;
 	}
+	
+	public Vehiculo(String nombre) {
+		this();		
+		this.nombre=nombre;		
+	}
+	
 
 	public int getNumPlazas() {
 		return numPlazas;

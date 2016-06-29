@@ -10,6 +10,12 @@ public class VehiculoElectrico extends Vehiculo {
 		capacidadBateria = 150f;
 	}
 
+
+	public VehiculoElectrico(String nombre) {
+		super(nombre);
+	}	
+
+
 	public float getCapacidadBateria() {
 		return capacidadBateria;
 	}
