@@ -15,7 +15,7 @@ public class Dado {
 						"Joseba",
 						"Monica",
 						"Isabel",
-						"Iker",
+						"Bolaños",
 						"Ekaitz",
 						"Aitor"};
 	
