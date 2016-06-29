@@ -15,6 +15,10 @@ public class LineaColor extends Linea {
 		this.color = color;
 	}
 	
+	@Override
+	public String dibujar() {		
+		return super.dibujar() + " color " + this.color;		
+	}
 	
 	
 }

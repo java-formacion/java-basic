@@ -5,8 +5,8 @@ public class Linea extends ObjetoGrafico {
 	protected int longitud;
 	
 	@Override
-	public void dibujar() {
-		System.out.println("dibujamos linea longitud " + this.longitud );
+	public String dibujar() {
+		return "dibujamos linea longitud " + this.longitud;
 	}
 
 	public int getLongitud() {

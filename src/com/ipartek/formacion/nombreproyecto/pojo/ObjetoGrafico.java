@@ -1,6 +1,8 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-public abstract class ObjetoGrafico {
+import java.io.Serializable;
+
+public abstract class ObjetoGrafico implements Imprimible, Serializable {
 
 	protected int x;
 	protected int y;
@@ -18,7 +20,7 @@ public abstract class ObjetoGrafico {
 	/**
 	 * Los hijos deberan implemtar este metodo
 	 */
-	public abstract void dibujar();
+	public abstract String dibujar();
 	
 	
 	/* GETTERS y SETTERS */
