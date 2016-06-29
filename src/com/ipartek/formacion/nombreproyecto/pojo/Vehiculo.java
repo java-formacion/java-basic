@@ -1,12 +1,12 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-public class Vehiculo {
+public class Vehiculo implements IArrancable{
 	protected String nombre;
 	private int numPlazas;
 	private float potencia;
 	private float dimensiones;
 	
-	public Vehiculo() {
+	public Vehiculo(){
 		super();
 		nombre="";
 		numPlazas=1;
@@ -56,5 +56,25 @@ public class Vehiculo {
 	public String toString() {
 		return "Vehiculo [nombre=" + nombre + ", numPlazas=" + numPlazas + ", potencia=" + potencia + ", dimensiones="
 				+ dimensiones + "]";
+	}
+	@Override
+	public void arrancar() {
+		System.out.println("Arrancar");
+		
+	}
+	@Override
+	public void comprobarConductor() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void encenderLuces() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void sonarClaxon() {
+		// TODO Auto-generated method stub
+		
 	}
 }
