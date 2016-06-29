@@ -1,6 +1,10 @@
-package com.ipartek.formacion.nombreproyecto.pojo;
+package com.ipartek.formacion.ejercicios;
 
-public abstract class ObjetoGrafico {
+import java.io.Serializable;
+
+import com.ipartek.formacion.nombreproyecto.pojo.Imprimible;
+
+public abstract class ObjetoGrafico implements Imprimible, Serializable {
 	//No se pueden crear objetos de la clase abstracta
 	protected int x;
 	protected int y;
@@ -17,7 +21,7 @@ public abstract class ObjetoGrafico {
 	/**
 	 * Los hijos deberan implementar este metodo
 	 */
-	public abstract void dibujar();
+	public abstract String dibujar();
 	
 	public int getX() {
 		return x;

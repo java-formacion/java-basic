@@ -1,12 +1,12 @@
-package com.ipartek.formacion.nombreproyecto.pojo;
+package com.ipartek.formacion.ejercicios;
 
 public class Linea extends ObjetoGrafico {
 
 	protected int longitud;
 	
 	@Override
-	public void dibujar() {
-		System.out.println("Dibujamos la línea longitud "+this.longitud);
+	public String dibujar() {
+		return "Dibujamos la línea longitud "+this.longitud;
 	}
 
 	public int getLongitud() {

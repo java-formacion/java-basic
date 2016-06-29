@@ -1,4 +1,4 @@
-package com.ipartek.formacion.nombreproyecto.pojo;
+package com.ipartek.formacion.ejercicios;
 
 public class LineaColor extends Linea {
 	private String color;
@@ -10,5 +10,7 @@ public class LineaColor extends Linea {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	
+	public String dibujar(){
+		return super.dibujar()+" color "+this.color;
+	}
 }
