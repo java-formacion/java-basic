@@ -54,5 +54,8 @@ public class FormadorTest {
 
 		
 	}
+	
+	//asignar curso
+	//desasignar curso
 
 }
