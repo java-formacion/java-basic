@@ -7,7 +7,7 @@ import java.util.ArrayList;
  *
  */
 
-public class Formador extends Persona {
+public class Formador extends Persona implements Icurso{
 
 	/**
 	 * ArrayList de objetos Curso
@@ -49,18 +49,38 @@ public class Formador extends Persona {
 	}
 
 
-
-	public ArrayList<Curso> getCursos() {
-		return cursos;
-	}
-
-	public void setCursos(ArrayList<Curso> cursos) {
-		this.cursos = cursos;
-	}
-
 	@Override
 	public String toString() {
 		return super.toString() + " Formador [cursos=" + cursos.toString() + "]";
+	}
+
+	
+	@Override
+	public ArrayList<Curso> getCursos() {
+		
+		return this.cursos;
+	}
+
+	@Override
+	public boolean asignarCurso(Curso curso) {
+		boolean resul = false;
+		
+		if (this.cursos.add(curso)){
+			resul= true;
+		}
+			
+		return resul;
+	}
+
+	@Override
+	public boolean desasignarCurso(Curso curso) {
+		boolean resul = false;
+		
+		if (this.cursos.remove(curso)){
+			resul = true;
+		}
+		
+		return resul;
 	}
 	
 	
