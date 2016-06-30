@@ -4,6 +4,9 @@ import com.ipartek.formacion.nombreproyecto.Utilidades;
 
 public class Persona {
 
+	/**
+	 * Clase Persona con atributos
+	 */
 	protected String nom;
 	protected String apell1;
 	protected String apell2;
@@ -12,9 +15,9 @@ public class Persona {
 	
 	public Persona(String nom, String apell1, String apell2, String dni, String email) {
 		super();
-		this.nom = Utilidades.capitalizar(nom);
-		this.apell1 = Utilidades.capitalizar(apell1);
-		this.apell2 = Utilidades.capitalizar(apell2);
+		this.setNom(nom);
+		this.setApell1(apell1);
+		this.setApell2(apell2);
 		this.dni = dni;
 		this.email = email;
 	}
@@ -91,6 +94,15 @@ public class Persona {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Persona [nom=" + nom + ", apell1=" + apell1 + ", apell2=" + apell2 + ", dni=" + dni + ", email=" + email
+				+ "]";
 	}
 	
 	

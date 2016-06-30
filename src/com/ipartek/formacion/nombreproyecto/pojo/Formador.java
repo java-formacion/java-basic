@@ -10,6 +10,7 @@ public class Formador extends Persona implements ICurso {
 	
 	public Formador(String nom, String apell1, String apell2, String dni, String email) {
 		super(nom, apell1, apell2, dni, email);
+		this.alCursos = new ArrayList<Curso>();
 	}
 
 
@@ -17,31 +18,38 @@ public class Formador extends Persona implements ICurso {
 	public Formador(String nom, String apell1, String apell2, String dni, String email,
 			ArrayList<Curso> alCursos) {
 		super(nom, apell1, apell2, dni, email);
-		this.alCursos = alCursos;
+		if (alCursos != null){
+			this.alCursos = alCursos;
+		}else{
+		this.alCursos = new ArrayList<Curso>();
+		}
 	}
 
 
 
-	/**
-	 * @param alAsignaturas the alAsignaturas to set
-	 */
-	public void setCursos(ArrayList<Curso> alCursos) {
-		this.alCursos = alCursos;
+	
+
+
+
+	@Override
+	public ArrayList<Curso> getCursos() {
+		
+		return this.alCursos;
 	}
 
 
 
 	@Override
-	public ArrayList<Object> getCursos() {
+	public boolean asignarCurso(ArrayList<Curso> curso) {
 		
-		return this.getCursos();
-	}
-
-
-
-	@Override
-	public boolean asignarCurso(Object curso) {
-		
+		boolean asignado = false;
+		if (curso != null){
+			for (int i=0; i<curso.size(); i++){
+				
+				
+				
+			}
+		}
 		
 		
 		return false;
@@ -50,7 +58,7 @@ public class Formador extends Persona implements ICurso {
 
 
 	@Override
-	public boolean desAsignarCurso(Object curso) {
+	public boolean desAsignarCurso(ArrayList<Curso> curso) {
 		// TODO Auto-generated method stub
 		return false;
 	}

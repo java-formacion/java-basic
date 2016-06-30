@@ -21,35 +21,61 @@ import com.ipartek.formacion.nombreproyecto.Utilidades;
  */
 public class Candidato extends Persona{
 	
-	private int nota;
-	
+	//Constantes
+	/**
+	 * 
+	 */
 	static final int NOTA_MINIMA = 0;
 	static final int NOTA_MAXIMA = 10;
 	static final int NOTA_ACEPTADO = 5;
 	
+	//Atributos
+	/**
+	 * 
+	 */
+	private int nota;
 	
-	
+	//Constructores
+	/**
+	 * 
+	 */
 	public Candidato() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 
-
+	/**
+	 * 
+	 * @param nom
+	 * @param apell1
+	 * @param apell2
+	 * @param dni
+	 * @param email
+	 */
 	public Candidato(String nom, String apell1, String apell2, String dni, String email) {
 		super(nom, apell1, apell2, dni, email);
+		this.nota = NOTA_MINIMA;
 		// TODO Auto-generated constructor stub
 	}
 
 
-
+	/**
+	 * 
+	 * @param nom
+	 * @param apell1
+	 * @param apell2
+	 * @param dni
+	 * @param email
+	 * @param nota
+	 */
 	public Candidato(String nom, String apell1, String apell2, String dni, String email, int nota) {
 		super(nom, apell1, apell2, dni, email);
 		this.setNota(nota);
 	}
 
 
-	
+	//geters y seters
 
 	/**
 	 * @return the nota
@@ -94,6 +120,21 @@ public class Candidato extends Persona{
 		return aceptado;
 	
 	}
+
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Candidato [nota=" + nota + ", nom=" + nom + ", apell1=" + apell1 + ", apell2=" + apell2 + ", dni=" + dni
+				+ ", email=" + email + "]";
+	}
+
+
+	
+	
+	
 	
 
 }
