@@ -14,18 +14,8 @@ public class Persona {
 	//Constructor con parametros nombre y ape1
 	public Persona(String nombre, String ape1) {
 		super();
-		this.nombre = nombre;
-		this.ape1 = ape1;
-		this.ape2 = "";
-		this.dni = "";
-		this.email = "";
-	}
-
-	//Constructor sin parametros 
-	public Persona() {
-		super();
-		this.nombre = "";
-		this.ape1 = "";
+		setNombre(nombre);
+		setApellido1(ape1);
 		this.ape2 = "";
 		this.dni = "";
 		this.email = "";
@@ -37,8 +27,7 @@ public class Persona {
 	}
 
 	public void setNombre(String nombre) {
-		Utilidades.capitalizar(nombre);		
-		this.nombre = nombre;
+		this.nombre = Utilidades.capitalizar(nombre);			
 	}
 
 	public String getApellido1() {
@@ -46,8 +35,8 @@ public class Persona {
 	}
 
 	public void setApellido1(String apellido1) {
-		Utilidades.capitalizar(apellido1);
-		this.ape1 = apellido1;
+		
+		this.ape1 = Utilidades.capitalizar(apellido1);
 	}
 
 	public String getApellido2() {
@@ -55,8 +44,7 @@ public class Persona {
 	}
 
 	public void setApellido2(String apellido2) {
-		Utilidades.capitalizar(apellido2);
-		this.ape2 = apellido2;
+		this.ape2 = Utilidades.capitalizar(apellido2);
 	}
 
 	public String getDni() {
@@ -71,8 +59,13 @@ public class Persona {
 		return email;
 	}
 	public void setEmail(String email) {
-		Utilidades.validarEmail(email);
 		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", ape1=" + ape1 + ", ape2=" + ape2 + ", dni=" + dni + ", email=" + email
+				+ "]";
 	}
 
 }

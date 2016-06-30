@@ -1,5 +1,7 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
+import com.ipartek.formacion.nombreproyecto.Utilidades;
+
 /**
  * Curso que puede tener un formador:
  * <ul>
@@ -20,7 +22,7 @@ public class Curso {
 	public Curso(String codigo, String nombre, int horas) {
 		super();
 		this.codigo = codigo;
-		this.nombre = nombre;
+		setNombre(nombre);
 		this.horas = horas;
 	}
 
@@ -37,7 +39,7 @@ public class Curso {
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombre = Utilidades.capitalizar(nombre);
 	}
 
 	public int getHoras() {

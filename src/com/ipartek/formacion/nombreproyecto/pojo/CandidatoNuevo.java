@@ -16,24 +16,26 @@ package com.ipartek.formacion.nombreproyecto.pojo;
  *
  */
 public class CandidatoNuevo extends Persona {
-
-	private int nota;	
 	
 	//Atributos constantes para el rango de las notas
 	public static final int	NOTA_MINIMA = 0;
 	public static final int NOTA_ACEPTADO = 5;
 	public static final int NOTA_MAXIMA = 10;
 	
-	//Constructor con parametros
-	public CandidatoNuevo(String nombre, String ape1){
-		super(nombre, ape1);
-		this.nota=0;
-	}
+	//Atributos
+	private int nota;	
 	
-	//Constructor por defecto
-	public CandidatoNuevo(){
-		super();
-		this.nota=0;
+	/**
+	 * Constructor de la clase CandidatoNuevo
+	 * @see Persona es la superClass
+	 * @param nombre
+	 * @param ape1
+	 * @param nota
+	 */
+	//Constructor con parametros
+	public CandidatoNuevo(String nombre, String ape1, int nota){
+		super(nombre, ape1);
+		this.setNota(nota);
 	}
 	
 	public int getNota() {
@@ -68,6 +70,11 @@ public class CandidatoNuevo extends Persona {
 			aceptado=true;
 		}
 		return aceptado;
+	}
+
+	@Override
+	public String toString() {
+		return "CandidatoNuevo [nota=" + nota + "]";
 	}
 	
 }

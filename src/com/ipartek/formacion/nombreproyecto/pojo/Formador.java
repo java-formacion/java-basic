@@ -17,19 +17,24 @@ import java.util.ArrayList;
  */
 public class Formador extends Persona implements ICurso {
 	
-	//ArrayList<Curso> cursos = new ArrayList<Curso>();
+	private ArrayList<Curso> cursos = new ArrayList<Curso>();
 		
 
-	//Constructor por defecto
-	public Formador() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	//Constructor con parametros
-	public Formador(String nombre, String ape1) {
+	public Formador(String nombre, String ape1, ArrayList<Curso> cursos) {
 		super(nombre, ape1);
-		// TODO Auto-generated constructor stub
+		if (cursos != null){
+			this.cursos = cursos;
+		}else{
+			this.cursos = new ArrayList<Curso>();
+		}
+		
+	}
+	
+	
+	//Getters y setters
+	public void setCursos(ArrayList<Curso> cursos) {
+		this.cursos = cursos;
 	}
 	
 
