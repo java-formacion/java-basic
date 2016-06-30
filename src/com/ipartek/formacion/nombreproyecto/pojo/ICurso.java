@@ -8,7 +8,7 @@ public interface ICurso {
 	 * retorna un listado con todos los cursos
 	 * @return
 	 */
-	public ArrayList<Object> getCursos();
+	public ArrayList<Curso> getCursos();
 	
 	
 	/**

@@ -41,15 +41,14 @@ public class FormadorTest {
 		assertEquals("Marta", f.getNombre());
 		assertEquals("Lekue", f.getApellido1());
 		
-		assertNull(f.getCursos());
-		assertEquals(0, f.getCursos().size());
-		
-		
-		ArrayList<Curso> cursos = new ArrayList<Curso>();
-		Curso c = new Curso("789","PHP", 120);
-		cursos.add(c);
-		f.setCursos(cursos);
 		assertNotNull(f.getCursos());
+		//assertEquals(0, f.getCursos().size());
+		
+		//probar dos constructores
+		//probar asignar curso y desasignar curso
+		//Asignar cJava, cPhp, cVB e ir viendo la longitud
+		//Desasignar cJava, cPhp, cVB e ir viendo la longitud
+		assertEquals(0, listaCursos.size());
 		
 		
 		
