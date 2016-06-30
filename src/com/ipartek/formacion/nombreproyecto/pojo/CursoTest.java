@@ -11,7 +11,7 @@ public class CursoTest {
 		
 		Curso c = new Curso("aoedjk", "Java avanzado", 510);
 		assertEquals("aoedjk", c.getCodigo());
-		assertEquals("Java avanzado", c.getNombre());
+		assertEquals("Java Avanzado", c.getNombre());
 		assertEquals(510, c.getHoras());
 		
 	}

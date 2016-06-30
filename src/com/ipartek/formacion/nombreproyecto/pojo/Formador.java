@@ -15,7 +15,7 @@ public class Formador extends Persona {
 	private ArrayList<Curso> cursos;
 
 	/**
-	 * Constructor de Formador. Asignará null cursos {@code ArrayList}
+	 * Constructor de Formador. Asignará un {@code ArrayList} sin elementos
 	 * @param nombre {@code String}
 	 * @param apellido1 {@code String}
 	 * @param apellido2 {@code String}
@@ -24,8 +24,31 @@ public class Formador extends Persona {
 	 */
 	public Formador(String nombre, String apellido1, String apellido2, String dni, String email) {
 		super(nombre, apellido1, apellido2, dni, email);
-		cursos = null;
+		this.cursos = new ArrayList<Curso>();
 	}
+	
+	/**
+	 * Constructor de Formador.
+	 * @param nombre {@code String}
+	 * @param apellido1 {@code String}
+	 * @param apellido2 {@code String}
+	 * @param dni {@code String}
+	 * @param email {@code String}
+	 * @param cursos {@code ArrayList<Curso>}
+	 */
+
+	public Formador(String nombre, String apellido1, String apellido2, String dni, String email,
+			ArrayList<Curso> cursos) {
+		super(nombre, apellido1, apellido2, dni, email);
+		if(cursos != null){
+			this.cursos = cursos;
+		}else{
+			this.cursos = new ArrayList<Curso>();
+		}
+		
+	}
+
+
 
 	public ArrayList<Curso> getCursos() {
 		return cursos;

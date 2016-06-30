@@ -2,15 +2,27 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 /**
  * Clase Curso
- * <li>codigo</li>
- * <li>nombre</li>
- * <li>horas</li>
+ * <ol>
+ * 	<li>codigo</li>
+ * 	<li>nombre</li>
+ * 	<li>horas</li>
+ * </ol>
  */
 
 public class Curso {
 
+	/**
+	 * Código alfanumérico usado como identificador único del {@code Curso}
+	 */
 	private String codigo;
+	/**
+	 * Nombre del {@code Curso}
+	 */
 	private String nombre;
+	
+	/**
+	 * Duración en horas del {@code Curso}
+	 */
 	private int horas;
 	
 	/**
@@ -21,7 +33,8 @@ public class Curso {
 	 */
 	public Curso(String codigo, String nombre, int horas) {
 		this.codigo = codigo;
-		this.nombre = nombre;
+		//this.nombre = nombre;
+		setNombre(nombre);
 		this.horas = horas;
 	}
 
@@ -38,7 +51,7 @@ public class Curso {
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombre = Utilidades.capitalizarMio(nombre);
 	}
 
 	public int getHoras() {

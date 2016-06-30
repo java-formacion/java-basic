@@ -1,13 +1,16 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
 /**
- * Clase Candidato2, hija de persona
+ * Clase Candidato2
+ *  @see Persona es la superClase
+ * <ol>
  * <li>nombre</li>
  * <li>apellido1</li>
  * <li>apellido2</li>
  * <li>dni</li>
  * <li>email</li>
  * <li>nota</li>
+ *</ol>
  */
 
 public class Candidato2 extends Persona {
@@ -25,6 +28,9 @@ public class Candidato2 extends Persona {
 	 */
 	public static final int NOTA_APROBADO = 5;
 	
+	/**
+	 * {@code int} nota del Candidato2
+	 */
 	private int nota;
 	
 	/**
@@ -37,7 +43,7 @@ public class Candidato2 extends Persona {
 	 */
 	public Candidato2(String nombre, String apellido1, String apellido2, String dni, String email) {
 		super(nombre, apellido1, apellido2, dni, email);
-		nota = NOTA_MINIMA;
+		this.nota = NOTA_MINIMA;
 	}
 
 	public int getNota() {
@@ -65,14 +71,13 @@ public class Candidato2 extends Persona {
 	/**
 	 * Método estaAceptado nos indica si un Candidato2 está aceptado
 	 * Para ello, su nota debe ser igual o mayor a NOTA_APOROBADO
-	 * @param nota {@code int}
 	 * @return aceptado {@code boolean}
 	 */
-	public boolean estaAceptado(int nota){
+	public boolean estaAceptado(){
 		
 		boolean aceptado = false;
 		
-		if(nota>=NOTA_APROBADO){
+		if(this.nota>=NOTA_APROBADO){
 			aceptado = true;
 		}
 		

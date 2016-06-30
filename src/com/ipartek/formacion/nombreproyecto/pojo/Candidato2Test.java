@@ -18,11 +18,11 @@ public class Candidato2Test {
 		
 		candidato.setNota(11);
 		assertEquals(candidato.NOTA_MAXIMA, candidato.getNota());
-		assertTrue(candidato.estaAceptado(candidato.getNota()));
+		assertTrue(candidato.estaAceptado());
 		
 		candidato.setNota(-1);
 		assertEquals(candidato.NOTA_MINIMA, candidato.getNota());
-		assertFalse(candidato.estaAceptado(candidato.getNota()));
+		assertFalse(candidato.estaAceptado());
 		
 		
 		

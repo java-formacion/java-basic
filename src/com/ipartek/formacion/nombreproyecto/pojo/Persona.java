@@ -1,13 +1,14 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
 /**
- * Clase persona con atributos
+ * Clase Persona con atributos
+ * <ol>
  * <li>nombre</li>
  * <li>apellido1</li>
  * <li>apellido2</li>
  * <li>dni</li>
  * <li>email</li>
- *
+ * </ol>
  */
 
 public class Persona {
@@ -28,9 +29,9 @@ public class Persona {
 	 */
 	public Persona(String nombre, String apellido1, String apellido2, String dni, String email) {
 		super();
-		this.nombre = nombre;
-		this.apellido1 = apellido1;
-		this.apellido2 = apellido2;
+		this.setNombre(nombre);
+		this.setApellido1(apellido1);
+		this.setApellido2(apellido2);
 		this.dni = dni;
 		this.email = email;
 	}
@@ -42,7 +43,7 @@ public class Persona {
 
 
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombre = Utilidades.capitalizarMio(nombre);
 	}
 
 
@@ -52,7 +53,7 @@ public class Persona {
 
 
 	public void setApellido1(String apellido1) {
-		this.apellido1 = apellido1;
+		this.apellido1 = Utilidades.capitalizarMio(apellido1);
 	}
 
 
@@ -62,7 +63,7 @@ public class Persona {
 
 
 	public void setApellido2(String apellido2) {
-		this.apellido2 = apellido2;
+		this.apellido2 = Utilidades.capitalizarMio(apellido2);
 	}
 
 
