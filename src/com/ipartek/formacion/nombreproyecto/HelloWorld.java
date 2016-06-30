@@ -10,7 +10,7 @@ public class HelloWorld {
 		
 		
 		//instanciar objeto<Candidato>
-		Candidato objeto = new Candidato("","");
+		Candidato objeto = new Candidato("","", null, null, null, 0);
 		
 		//sin encapsular
 		//objeto.nombre = "Ander";
