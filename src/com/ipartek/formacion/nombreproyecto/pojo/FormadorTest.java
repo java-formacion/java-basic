@@ -2,6 +2,8 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -10,9 +12,24 @@ import org.junit.Test;
 
 public class FormadorTest {
 
-	Formador f;
-	
-	
+	ArrayList<Curso> cursos;
+
+	Curso c1;
+	Curso c2;
+	Curso c3;
+	Curso c4;
+	Curso c5;
+	Curso c6;
+
+	/**
+	 * formador sin cursos
+	 */
+	Formador f1;
+	/**
+	 * formador con 2 cursos
+	 */
+	Formador f2;
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -23,36 +40,68 @@ public class FormadorTest {
 
 	@Before
 	public void setUp() throws Exception {
-		f = new Formador("Marta", "Lekue", "Arriaga", "33333333C", "marta@gmail.com");
+		c1 = new Curso("IFC01", "Java", 350);
+		c2 = new Curso("IFC02", "Php", 250);
+		c3 = new Curso("IFC03", "VB", 150);
+		c4 = new Curso("IFC04", "KamaSutra Avanzado", 650);
+		c5 = new Curso("IFC05", "Como no dar ni golpe", 0);
+		c6 = new Curso("IFC06", "Vivir del cuento", 10);
+
+		cursos = new ArrayList<Curso>();
+
+		cursos.add(c1);
+		cursos.add(c2);
+		cursos.add(c3);
+
+		f1 = new Formador("Marta", "Lekue", "Arriaga", "33333333C", "marta@gmail.com");
+		f2 = new Formador("Paco", "porras", "pepinillo", "12324555H", "pacopope@gmail.com", cursos);
+
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		f = null;
+		f1 = null;
+		f2 = null;
+
+		c1 = null;
+		c2 = null;
+		c3 = null;
+
+		cursos = null;
+
 	}
 
-	
 	@Test
 	public void testConstructor() {
-		
-		assertEquals("Marta", f.getNombre());
-		assertEquals("Lekue", f.getApellido1());
-		assertEquals("Arriaga", f.getApellido2());
-		assertEquals("33333333C", f.getDni());
-		assertEquals("marta@gmail.com", f.getEmail());
 
-		assertNotNull(f.getCursos());
-		assertEquals(0, f.getCursos().size());
+		assertEquals("Marta", f1.getNombre());
+		assertEquals("Lekue", f1.getApellido1());
+		assertEquals("Arriaga", f1.getApellido2());
+		assertEquals("33333333C", f1.getDni());
+		assertEquals("marta@gmail.com", f1.getEmail());
 
+		assertNotNull(f2.getCursos());
+		assertEquals(0, f1.getCursos().size());
+		assertEquals(3, f2.getCursos().size());
+
+		f2.asignarCurso(c4);
+		assertEquals(4, f2.getCursos().size());
 		
+		f2.asignarCurso(c5);
+		f2.asignarCurso(c6);
+		assertEquals(6, f2.getCursos().size());
+		
+		f2.desAsignarCurso(c5);
+		assertEquals(5, f2.getCursos().size());
+		
+
 	}
-	
+
 	@Test
 	public void testConstructorParametros() {
-		
-		assertNotNull(f);
 
-		
+		assertNotNull(f1);
+
 	}
 
 }

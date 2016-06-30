@@ -11,7 +11,7 @@ public interface Icurso {
 	public ArrayList<Curso> getCursos();
 	
 	/**
-	 * Añade a la lista un unevo Curso
+	 * Añade a la lista un nuevo Curso
 	 * @param curso
 	 * @return
 	 */
