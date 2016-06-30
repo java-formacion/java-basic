@@ -11,25 +11,29 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class PersonaTest {
-
+	Formador f1;
+	Curso cJava,cPhp,cVisualBasic;
+	ArrayList<Curso> listaCursos;
 	//Estas funciones son de una clase Test que sera eliminada
-			/*@BeforeClass
+			@BeforeClass
 			public static void setUpBeforeClass() throws Exception {
-				f1 = new Formador();
+				
 			}
 
 			@AfterClass
 			public static void tearDownAfterClass() throws Exception {
-				f1 = null;
+				
 			}
 
 			@Before
 			public void setUp() throws Exception {
+				f1 = new Formador();
 			}
 
 			@After
 			public void tearDown() throws Exception {
-			}*/
+				f1 = null;
+			}
 	
 	@Test
 	public void testPersona() {
@@ -54,7 +58,6 @@ public class PersonaTest {
 		c1.setNota(4);
 		assertFalse(c1.isAceptado());
 		
-		Formador f1 = new Formador();
 		f1.setNombre("Ander");
 		f1.setApellido1("Uraga");
 		f1.setApellido2("qoewjdf");
