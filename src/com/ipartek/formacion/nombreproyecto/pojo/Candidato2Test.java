@@ -24,6 +24,8 @@ public class Candidato2Test {
 		assertEquals(candidato.NOTA_MINIMA, candidato.getNota());
 		assertFalse(candidato.estaAceptado(candidato.getNota()));
 		
+		
+		
 	}
 
 }
