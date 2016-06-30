@@ -13,26 +13,20 @@ package com.ipartek.formacion.nombreproyecto.pojo;
  * @author Andoni Luna
  *
  */
-public class Candidato {
-	// atributos
-	private String nombre;
-	private String apellido1;
-	private String apellido2;
-	private String dni;
-
-	// constructor
+public class Candidato extends Persona {
+	
+	private int nota;
+	public final static int NOTA_MINIMA = 0;
+	public final static int NOTA_APROBADO = 5;
+	public final static int NOTA_MAXIMA = 10;
+	
+	// constructores
 	public Candidato() {
 		super();
-		this.nombre = "";
-		this.apellido1 = "";
-		this.apellido2 = "";
-		this.dni = "";
+		this.nota = NOTA_MINIMA;
 	}
 	public Candidato(String nombre, String dni) {
 		super();
-		//nombre, apellido1 y apellido2 siempre esten bien capitalizados
-		this.nombre = "anonimo";
-		this.dni = "anonimo";
 	}
 
 	/**
@@ -69,20 +63,29 @@ public class Candidato {
 	public void setApellido2(String apellido2) {
 		this.apellido2 = capitalizarString(apellido2);
 	}
-
-	public String getDni() {
-		return dni;
+	
+	public int getNota() {
+		return nota;
 	}
-
-	public void setDni(String dni) {
-		this.dni = dni;
+	/**
+	 * metodo set que controla que le pasemos una nota correcta y
+	 * en caso de que los valores se salgan del rango los corrigue
+	 * @param nota
+	 */
+	public void setNota(int nota) {
+		if (nota>NOTA_MAXIMA){
+			this.nota=NOTA_MAXIMA;
+		}else if (nota<NOTA_MINIMA){
+			this.nota=NOTA_MINIMA;
+		}else{
+			this.nota = nota;
+		}
 	}
-
 	
 	@Override
 	public String toString() {
-		return "Candidato [nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", dni=" + dni
-				+ "]";
+		return "Candidato [nota=" + nota + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2="
+				+ apellido2 + ", dni=" + dni + ", email=" + email + "]";
 	}
 	/**
 	 * Función para capitalizar el String pasado como parametro
@@ -106,6 +109,17 @@ public class Candidato {
 			}
 			dev = String.valueOf(chars);
 			dev= dev.replace(" ", "");
+		}
+		return dev;
+	}
+	/**
+	 * Funcion booleana que devuelve true si {@code int} nota>={@code int}NOTA_APROBADO
+	 * @return boolean dev
+	 */
+	public boolean isAceptado() {
+		boolean dev=false;
+		if (this.nota>=NOTA_APROBADO){
+			dev=true;
 		}
 		return dev;
 	}
