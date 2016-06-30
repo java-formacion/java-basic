@@ -31,10 +31,10 @@ public class UtilidadesTest {
 		assertEquals( "Ander", "   Ander    ".trim() );
 		
 		
-		Candidato c = new Candidato();
+		Candidato c = new Candidato("", "", "", "", "", 0);
 		assertTrue ( c instanceof Candidato ); 
 		
-		Candidato c1 = new Candidato();
+		Candidato c1 = new Candidato("", "", "", "", "", 0);
 		
 		assertNotEquals("No son iguales, aunque lo parezcan", c, c1 );
 		
