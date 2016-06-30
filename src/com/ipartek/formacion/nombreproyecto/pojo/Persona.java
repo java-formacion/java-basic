@@ -1,18 +1,20 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
+import com.ipartek.formacion.nombreproyecto.Utilidades;
+
 public class Persona {
 
-	private String nom;
-	private String apell1;
-	private String apell2;
-	private String dni;
-	private String email;
+	protected String nom;
+	protected String apell1;
+	protected String apell2;
+	protected String dni;
+	protected String email;
 	
 	public Persona(String nom, String apell1, String apell2, String dni, String email) {
 		super();
-		this.nom = nom;
-		this.apell1 = apell1;
-		this.apell2 = apell2;
+		this.nom = Utilidades.capitalizar(nom);
+		this.apell1 = Utilidades.capitalizar(apell1);
+		this.apell2 = Utilidades.capitalizar(apell2);
 		this.dni = dni;
 		this.email = email;
 	}
@@ -32,7 +34,7 @@ public class Persona {
 	 * @param nom the nom to set
 	 */
 	public void setNom(String nom) {
-		this.nom = nom;
+		this.nom = Utilidades.capitalizar(nom);
 	}
 
 	/**
@@ -46,7 +48,7 @@ public class Persona {
 	 * @param apell1 the apell1 to set
 	 */
 	public void setApell1(String apell1) {
-		this.apell1 = apell1;
+		this.apell1 = Utilidades.capitalizar(apell1);
 	}
 
 	/**
@@ -60,7 +62,7 @@ public class Persona {
 	 * @param apell2 the apell2 to set
 	 */
 	public void setApell2(String apell2) {
-		this.apell2 = apell2;
+		this.apell2 = Utilidades.capitalizar(apell2);
 	}
 
 	/**

@@ -1,24 +1,72 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-import java.util.ArrayList;
+public class Curso {
 
-public interface Curso {
+	protected String codigo;
+	protected String nombre;
+	protected int horas;
+	
+	
+	public Curso() {
+		super();
+	}
+
+
+	public Curso(String codigo, String nombre, int horas) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.horas = horas;
+	}
+
 
 	/**
-	 * retorna un listado con todos los cursos
-	 * @return
+	 * @return the codigo
 	 */
-	public ArrayList<Object> getCursos();
+	public String getCodigo() {
+		return codigo;
+	}
+
+
 	/**
-	 * Añade a la lista un nuevo curso
-	 * @param curso
-	 * @return
+	 * @param codigo the codigo to set
 	 */
-	public boolean asignarCurso(Object curso);
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+
 	/**
-	 * Eliminar de la lista un curso
-	 * @param curso
-	 * @return
+	 * @return the nombre
 	 */
-	public boolean desAsignarCurso(Object curso);
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	/**
+	 * @return the horas
+	 */
+	public int getHoras() {
+		return horas;
+	}
+
+
+	/**
+	 * @param horas the horas to set
+	 */
+	public void setHoras(int horas) {
+		this.horas = horas;
+	}
+	
+	
+	
 }

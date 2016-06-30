@@ -27,14 +27,72 @@ public class Candidato extends Persona{
 	static final int NOTA_MAXIMA = 10;
 	static final int NOTA_ACEPTADO = 5;
 	
-	public boolean aceptado(){
+	
+	
+	public Candidato() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public Candidato(String nom, String apell1, String apell2, String dni, String email) {
+		super(nom, apell1, apell2, dni, email);
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public Candidato(String nom, String apell1, String apell2, String dni, String email, int nota) {
+		super(nom, apell1, apell2, dni, email);
+		this.setNota(nota);;
+	}
+
+
+	
+
+	/**
+	 * @return the nota
+	 */
+	public int getNota() {
+		return nota;
+	}
+
+
+
+	/**
+	 * @param nota the nota to set
+	 */
+	public void setNota(int nota) {
 		
-		if (this.nota < 0){
+		if (nota < NOTA_MINIMA){
+			
+			this.nota = NOTA_MINIMA;
+			
+		}else if(nota > NOTA_MAXIMA){
+			
+			this.nota = NOTA_MAXIMA;
+		}else {
+			
+			this.nota = nota;
+			
+		}
+	}
+
+
+
+	public boolean isAceptado(){
+		
+		boolean aceptado = false;
+		
+		if (this.nota >= NOTA_ACEPTADO){
+			
+			aceptado = true;
 			
 		}
 		
-		
-		return true;
+		return aceptado;
+	
 	}
 	
 
