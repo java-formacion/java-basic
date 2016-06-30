@@ -1,82 +1,92 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-/**
- * Clase de tipo POJO para instanciar objetos que representan un Candidato Los
- * atributos de un Candidato:
- * <ol>
- * <li>nombre</li>
- * <li>apellido1</li>
- * <li>apellido2</li>
- * <li>dni</li>
- * </ol>
- * 
- * @author Ander Uraga Real
- *
- */
-public class Candidato {
 
-	// atributos
-	private String nombre;
-	private String apellido1;
-	private String apellido2;
-	private String dni;
+public class Candidato extends Persona {
+
+	//Constantes
+	/**
+	 * NOTA_MINIMA {@code int} constante que guarda la nota mínima que se puede asignar
+	 */
+	public static final int NOTA_MINIMA = 0;
+	/**
+	 * NOTA_MAXIMA {@code int} constante que guarda la nota máxima que se puede asignar
+	 */
+	public static final int NOTA_MAXIMA = 10;
+	/**
+	 * NOTA_APROBADO {@code int} constante que guarda la nota a partir de la cual se considera aprobado
+	 */
+	public static final int NOTA_APROBADO = 5;
+
+	//Atributos
+	/**
+	 * {@code int} nota del Candidato
+	 */
+	private int nota;
 	
-	//constructor por defecto
-	public Candidato(){
-		super();
-		this.nombre = "";
-		this.apellido1 = "";
-		this.apellido2 = "";
-		this.dni = "";		
+	//Constructores
+	/**
+	 *  Constructor de la clase Candidato.
+	 *  
+	 *  @see Persona es la superClass
+	 *  
+	 * @param nombre
+	 * @param apellido1
+	 * @param apellido2
+	 * @param dni
+	 * @param email
+	 * @param nota
+	 */
+	public Candidato(String nombre, String apellido1, String apellido2, String dni, String email, int nota) {
+		super(nombre, apellido1, apellido2, dni, email);		
+		//this.nota = nota;
+		this.setNota(nota);
+	}
+
+	
+	//getters y setters	
+	public int getNota() {
+		return nota;
+	}
+
+	/**
+	 * Método setNota asigna una nota a un Candidato
+	 * Si nota es menor que NOTA_MINIMA asignamos NOTA_MINIMA
+	 * Si nota es mayor que NOTA_MAXIMA asignamos NOTA_MAXIMA
+	 * 
+	 */
+	public void setNota(int nota) {
+		
+		if (nota>NOTA_MAXIMA){
+			this.nota = NOTA_MAXIMA;
+		}else if(nota<NOTA_MINIMA){
+			this.nota = NOTA_MINIMA;
+		}else{
+			this.nota = nota;
+		}		
 	}
 	
-	//constructor con parametros
-	public Candidato(String nombre, String dni) {
-		this();
-		this.nombre = nombre;
-		this.dni = dni;
+	/**
+	 * Método estaAceptado nos indica si un Candidato2 está aceptado
+	 * Para ello, su nota debe ser igual o mayor a NOTA_APOROBADO
+	 *
+	 * @return aceptado {@code boolean}
+	 */
+	public boolean isAceptado(){
+		
+		boolean aceptado = false;
+		
+		if(this.nota>=NOTA_APROBADO){
+			aceptado = true;
+		}
+		
+		return aceptado;
 	}
-
-
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido1() {
-		return apellido1;
-	}
-
-	public void setApellido1(String apellido1) {
-		this.apellido1 = apellido1;
-	}
-
-	public String getApellido2() {
-		return apellido2;
-	}
-
-	public void setApellido2(String apellido2) {
-		this.apellido2 = apellido2;
-	}
-
-	public String getDni() {
-		return dni;
-	}
-
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-
+	
 	@Override
 	public String toString() {
-		return "Candidato [nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", dni=" + dni
-				+ "]";
+		return super.toString() + " Candidato [nota=" + nota + "]";
 	}
-		
+	
 
-
+	
 }

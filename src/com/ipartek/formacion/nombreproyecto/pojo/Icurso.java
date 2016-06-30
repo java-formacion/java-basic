@@ -8,21 +8,21 @@ public interface Icurso {
 	 * retorna un listado con todos los cursos
 	 * @return
 	 */
-	public ArrayList<Object> getCursos();
+	public ArrayList<Curso> getCursos();
 	
 	/**
 	 * Añade a la lista un unevo Curso
 	 * @param curso
 	 * @return
 	 */
-	public boolean asignarCurso(Object curso);
+	public boolean asignarCurso(Curso curso);
 	
 	/**
 	 * Eliminar de la lista un curso
 	 * @param curso
 	 * @return
 	 */
-	public boolean desAsignarCurso(Object curso);
+	public boolean desAsignarCurso(Curso curso);
 	
 	
 }
