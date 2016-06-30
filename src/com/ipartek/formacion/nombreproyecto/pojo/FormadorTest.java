@@ -17,7 +17,28 @@ public class FormadorTest {
 		aCursos.add(cursoJava);
 		aCursos.add(cursoAndroid);
 		Formador f = new Formador("ANGEL", "AngelEs", "Angelico", "77777777L", "angel@kkfonica", aCursos);
+		
+		assertEquals("Angel",f.getNom());
 		assertEquals("Angeles",f.getApell1());
+		assertEquals("Angelico",f.getApell2());
+		assertEquals("77777777L",f.getDni());
+		assertEquals("angel@kkfonica",f.getEmail());
+		
+		f.setNom("Manolo");
+		f.setApell1("El del");
+		f.setApell2("Bombo");
+		f.setDni("55555555T");
+		f.setEmail("spain@isdiferent.com");
+	
+		assertEquals("Manolo",f.getNom());
+		assertEquals("ElDel",f.getApell1());
+		assertEquals("Bombo",f.getApell2());
+		assertEquals("55555555T",f.getDni());
+		assertEquals("spain@isdiferent.com",f.getEmail());
+		
+		//assertEquals("",((Curso)f.getCursos()).getCodigo());
+		
+		
 	}
 
 }

@@ -45,7 +45,7 @@ public class Candidato extends Persona{
 
 	public Candidato(String nom, String apell1, String apell2, String dni, String email, int nota) {
 		super(nom, apell1, apell2, dni, email);
-		this.setNota(nota);;
+		this.setNota(nota);
 	}
 
 
