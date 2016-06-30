@@ -3,10 +3,10 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 import java.util.ArrayList;
 
 public class Formador extends Persona {
-	private ArrayList cursos= new ArrayList();
+	private ArrayList<Curso> cursos;
 	public Formador() {
 		super();
-		this.cursos=cursos;
+		this.cursos=new ArrayList<Curso>();
 	}
 	public ArrayList getCursos() {
 		return cursos;

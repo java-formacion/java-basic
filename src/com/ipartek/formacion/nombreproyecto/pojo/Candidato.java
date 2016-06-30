@@ -45,7 +45,7 @@ public class Candidato extends Persona {
 	 *            <String> cadena de texto con el nombre del candidato
 	 */
 	public void setNombre(String nombre) {
-		this.nombre = capitalizarString(nombre);
+		this.nombre = nombre;
 	}
 
 	public String getApellido1() {
@@ -53,7 +53,7 @@ public class Candidato extends Persona {
 	}
 
 	public void setApellido1(String apellido1) {
-		this.apellido1 = capitalizarString(apellido1);
+		this.apellido1 = apellido1;
 	}
 
 	public String getApellido2() {
@@ -61,7 +61,7 @@ public class Candidato extends Persona {
 	}
 
 	public void setApellido2(String apellido2) {
-		this.apellido2 = capitalizarString(apellido2);
+		this.apellido2 = apellido2;
 	}
 	
 	public int getNota() {
@@ -86,31 +86,6 @@ public class Candidato extends Persona {
 	public String toString() {
 		return "Candidato [nota=" + nota + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2="
 				+ apellido2 + ", dni=" + dni + ", email=" + email + "]";
-	}
-	/**
-	 * Función para capitalizar el String pasado como parametro
-	 * 
-	 * @param string
-	 *            {code String} que almacena el texto original
-	 * @return String capitalizado, null si falla
-	 */
-	public static String capitalizarString(String string) {
-		String dev = null;
-		if (string != null) {
-			char[] chars = string.toLowerCase().toCharArray();
-			boolean found = false;
-			for (int i = 0; i < chars.length; i++) {
-				if (!found && Character.isLetter(chars[i])) {
-					chars[i] = Character.toUpperCase(chars[i]);
-					found = true;
-				} else if (Character.isWhitespace(chars[i]) || chars[i] == '.' || chars[i] == '-' || chars[i] == '\'') {
-					found = false;
-				}
-			}
-			dev = String.valueOf(chars);
-			dev= dev.replace(" ", "");
-		}
-		return dev;
 	}
 	/**
 	 * Funcion booleana que devuelve true si {@code int} nota>={@code int}NOTA_APROBADO

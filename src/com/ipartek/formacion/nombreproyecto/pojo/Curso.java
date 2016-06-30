@@ -2,13 +2,13 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 public class Curso {
 	private String nombre;
-	private int codigo;
-	private String horas;
-	public Curso() {
+	private String codigo;
+	private int horas;
+	public Curso(String nombre, String codigo, int horas) {
 		super();
-		this.nombre = "";
-		this.codigo = 0;
-		this.horas = "";
+		this.nombre = nombre;
+		this.codigo = codigo;
+		this.horas = horas;
 	}
 	public String getNombre() {
 		return nombre;
@@ -16,16 +16,16 @@ public class Curso {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
-	public String getHoras() {
+	public int getHoras() {
 		return horas;
 	}
-	public void setHoras(String horas) {
+	public void setHoras(int horas) {
 		this.horas = horas;
 	}
 	@Override
