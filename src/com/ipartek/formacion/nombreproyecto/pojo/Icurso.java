@@ -22,7 +22,7 @@ public interface Icurso {
 	 * @param curso
 	 * @return
 	 */
-	public boolean desAsignarCurso(Curso curso);
+	public boolean desAsignarCurso( Curso curso );
 	
 	
 }
