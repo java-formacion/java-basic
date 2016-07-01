@@ -9,14 +9,12 @@ public class PersonaTest {
 	@Test
 	public void test() {
 		
-		CandidatoNuevo ca1 = new CandidatoNuevo("pEpe", "poRras", 4);
-		ca1.setApellido2(" apellido2");
-		ca1.setEmail("pepito@gmail.com");
-
-		assertEquals("Pepe", ca1.getNombre());
-		assertEquals("Porras", ca1.getApellido1());
-		assertEquals("Apellido2", ca1.getApellido2());
-		assertEquals("pepito@gmail.com", ca1.getEmail());
+		Persona p = new Persona("pepe", "PaLItos", " palotEs ", "1111111A", "pepito@gmail.com");
+		assertEquals("Pepe", p.getNombre());
+		assertEquals("Palitos", p.getApellido1());
+		assertEquals("Palotes", p.getApellido2());
+		assertEquals("1111111A", p.getDni());
+		assertEquals("pepito@gmail.com", p.getEmail());
 				
 	}
 

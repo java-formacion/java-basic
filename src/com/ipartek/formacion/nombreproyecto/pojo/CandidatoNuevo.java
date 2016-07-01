@@ -31,9 +31,10 @@ public class CandidatoNuevo extends Persona {
 	 * @param nombre
 	 * @param ape1
 	 * @param nota
+	 * @throws CandidatoException 
 	 */
 	//Constructor con parametros
-	public CandidatoNuevo(String nombre, String ape1, int nota){
+	public CandidatoNuevo(String nombre, String ape1, int nota) throws CandidatoException{
 		super(nombre, ape1);
 		this.setNota(nota);
 	}
@@ -42,17 +43,20 @@ public class CandidatoNuevo extends Persona {
 		return nota;
 	}
 
+	
 	/**
-	 * Controlamos que la nota pasada por parametro este dentro de los limites de NOTA_MINIMA y NOTA_MAXIMA.<br>
-	 * Si se salen de dicho limite, se les asigna el valor minimo/maximo.
-	 * @param nota {@code int} nota del candidato
+	 * 
+	 * @param nota
+	 * @throws CandidatoException
 	 */
-	public void setNota(int nota) {
+	public void setNota(int nota) throws CandidatoException{
 		if (nota < NOTA_MINIMA){
-			this.nota = NOTA_MINIMA;
+//			this.nota = NOTA_MINIMA;
+			throw new CandidatoException(CandidatoException.EXCEPTION_RANGO_NOTA_MAX);
 			
 		}else if (nota > NOTA_MAXIMA){
-			this.nota = NOTA_MAXIMA;
+//			this.nota = NOTA_MAXIMA;
+			throw new CandidatoException(CandidatoException.EXCEPTION_RANGO_NOTA_MIN);
 			
 		}else{
 			this.nota = nota;
