@@ -66,13 +66,16 @@ public class FormadorTest {
 		c1 = null;
 		c2 = null;
 		c3 = null;
+		c4 = null;
+		c5 = null;
+		c6 = null;
 
 		cursos = null;
 
 	}
 
 	@Test
-	public void testConstructor() {
+	public void testConstructorSinCursos() {
 
 		assertEquals("Marta", f1.getNombre());
 		assertEquals("Lekue", f1.getApellido1());
@@ -80,11 +83,12 @@ public class FormadorTest {
 		assertEquals("33333333C", f1.getDni());
 		assertEquals("marta@gmail.com", f1.getEmail());
 
+		assertNotNull(f1.getCursos());
 		assertNotNull(f2.getCursos());
+		assertEquals(cursos.size(), f2.getCursos().size());
 		assertEquals(0, f1.getCursos().size());
-		assertEquals(3, f2.getCursos().size());
 
-		f2.asignarCurso(c4);
+		assertTrue(f2.asignarCurso(c4));
 		assertEquals(4, f2.getCursos().size());
 		
 		f2.asignarCurso(c5);
@@ -93,7 +97,14 @@ public class FormadorTest {
 		
 		f2.desAsignarCurso(c5);
 		assertEquals(5, f2.getCursos().size());
+		assertFalse(f2.desAsignarCurso(c5));
 		
+		assertFalse(f2.asignarCurso(null));
+		assertEquals(5, f2.getCursos().size());
+		
+		assertFalse(f1.desAsignarCurso(c5));
+		assertFalse(f1.desAsignarCurso(new Curso("", "", 0)));
+		assertFalse(f1.desAsignarCurso(null));
 
 	}
 

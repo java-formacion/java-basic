@@ -26,24 +26,31 @@ public class Formador extends Persona implements Icurso {
 	public ArrayList<Curso> getCursos() {
 
 		for (int i = 0; i < cursos.size(); i++) {
-			System.out.println(cursos.get(i));
+			//System.out.println(cursos.get(i));
 		}
 
-		return cursos;
+		return this.cursos;
 	}
 
 	@Override
 	public boolean asignarCurso(Curso curso) {
-		cursos.add(curso);
-
-		return false;
+		
+		boolean resul = false;
+		if ( curso != null ){
+			resul = cursos.add(curso);
+		}	
+		return resul;
 	}
 
 	@Override
 	public boolean desAsignarCurso(Curso codigo) {
+		boolean resul = false;
+		if (cursos.indexOf(codigo) != -1){
 		cursos.remove(codigo);
+		resul = true;
+		}
 
-		return false;
+		return resul;
 	}
 
 }
