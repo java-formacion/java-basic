@@ -87,7 +87,7 @@ public class FormadorTest {
 		assertEquals("marta@gmail.com", fConCursos.getEmail());
 
 		assertNotNull(fConCursos.getCursos());
-//		assertEquals(listaCursos.size(), fConCursos.getCursos().size());	
+		assertEquals(listaCursos.size(), fConCursos.getCursos().size());	
 		
 		//formador con cursos null
 		Formador fCursosNull = new Formador("Marta", "Lekue", "Arriaga", "33333333C", "marta@gmail.com", null);
@@ -102,11 +102,11 @@ public class FormadorTest {
 		assertTrue(fConCursos.asignarCurso(cJava));
 		assertEquals(totalInicioCursos+1, fConCursos.getCursos().size());	
 		
-		assertTrue(fConCursos.asignarCurso(cPhp));
-		assertEquals(totalInicioCursos+2, fConCursos.getCursos().size());	
-		
-		assertTrue(fConCursos.asignarCurso(cVisualBasic));
-		assertEquals(totalInicioCursos+3, fConCursos.getCursos().size());	
+//		assertTrue(fConCursos.asignarCurso(cPhp));
+//		assertEquals(totalInicioCursos+2, fConCursos.getCursos().size());	
+//		
+//		assertTrue(fConCursos.asignarCurso(cVisualBasic));
+//		assertEquals(totalInicioCursos+3, fConCursos.getCursos().size());	
 		
 		
 	}

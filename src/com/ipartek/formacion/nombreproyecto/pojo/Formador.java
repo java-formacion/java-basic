@@ -58,11 +58,12 @@ public class Formador extends Persona implements ICurso {
 	@Override
 	public boolean desAsignarCurso(Curso curso) {
 		boolean resul = false;
-		if (this.listaCursos.indexOf(curso) != -1){
-			resul = this.listaCursos.remove(curso);
+				
+		if (listaCursos.indexOf(curso) != -1) {
+			resul = listaCursos.remove(curso);			
 		}
 		
-		return resul;	
+		return resul;
 		
 	}
 	
