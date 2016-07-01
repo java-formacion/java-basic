@@ -21,35 +21,43 @@ public class Formador extends Persona implements Icurso {
 		}
 	}
 
-	// Metodos añadidos al implementar "ICurso"
 	@Override
 	public ArrayList<Curso> getCursos() {
-
-		for (int i = 0; i < cursos.size(); i++) {
-			//System.out.println(cursos.get(i));
-		}
-
 		return this.cursos;
 	}
 
 	@Override
 	public boolean asignarCurso(Curso curso) {
-		
 		boolean resul = false;
-		if ( curso != null ){
-			resul = cursos.add(curso);
-		}	
+		boolean existe = false;
+		if (curso != null) {
+			for (Curso c : cursos) {
+				if( curso.equals(c)){
+					existe=true;
+					break;
+				}
+					
+			}		
+			
+			if (!existe){
+				resul = this.cursos.add(curso);
+			}
+		}
 		return resul;
 	}
 
 	@Override
-	public boolean desAsignarCurso(Curso codigo) {
+	public boolean desAsignarCurso(Curso curso) {
 		boolean resul = false;
-		if (cursos.indexOf(codigo) != -1){
-		cursos.remove(codigo);
-		resul = true;
+		if (curso != null) {
+			for (int i = 0; i < cursos.size(); i++) {
+				if (curso.getCodigo().equals(cursos.get(i).getCodigo())) {
+					cursos.remove(i);
+					resul = true;
+					break;
+				}
+			}
 		}
-
 		return resul;
 	}
 

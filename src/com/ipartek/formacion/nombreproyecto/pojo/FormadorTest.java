@@ -12,24 +12,11 @@ import org.junit.Test;
 
 public class FormadorTest {
 
-	ArrayList<Curso> cursos;
-
-	Curso c1;
-	Curso c2;
-	Curso c3;
-	Curso c4;
-	Curso c5;
-	Curso c6;
-
-	/**
-	 * formador sin cursos
-	 */
-	Formador f1;
-	/**
-	 * formador con 2 cursos
-	 */
-	Formador f2;
-
+	Formador fSinCursos, fconCursos;	
+	Curso cJava,cPhP,cAndroid;	
+	ArrayList<Curso> lista;
+	int totalInicioCursos;
+		
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -39,80 +26,126 @@ public class FormadorTest {
 	}
 
 	@Before
-	public void setUp() throws Exception {
-		c1 = new Curso("IFC01", "Java", 350);
-		c2 = new Curso("IFC02", "Php", 250);
-		c3 = new Curso("IFC03", "VB", 150);
-		c4 = new Curso("IFC04", "KamaSutra Avanzado", 650);
-		c5 = new Curso("IFC05", "Como no dar ni golpe", 0);
-		c6 = new Curso("IFC06", "Vivir del cuento", 10);
-
-		cursos = new ArrayList<Curso>();
-
-		cursos.add(c1);
-		cursos.add(c2);
-		cursos.add(c3);
-
-		f1 = new Formador("Marta", "Lekue", "Arriaga", "33333333C", "marta@gmail.com");
-		f2 = new Formador("Paco", "porras", "pepinillo", "12324555H", "pacopope@gmail.com", cursos);
-
+	public void setUp() throws Exception {		
+		
+		cJava = new Curso("jav2857", "Java", 500);
+		cPhP = new Curso("php534","PHP",750);
+		cAndroid = new Curso("andr34534", "Android", 380);
+		
+		lista = new ArrayList<Curso>();
+		lista.add(cJava);
+		lista.add(cPhP);
+		lista.add(cAndroid);
+				
+		fSinCursos = new Formador("Marta", "Lekue", "Arriaga", "33333333C", "marta@gmail.com");
+		fconCursos = new Formador("Marta", "Lekue", "Arriaga", "33333333C", "marta@gmail.com", lista);
+		
+		totalInicioCursos = fconCursos.getCursos().size();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		f1 = null;
-		f2 = null;
-
-		c1 = null;
-		c2 = null;
-		c3 = null;
-		c4 = null;
-		c5 = null;
-		c6 = null;
-
-		cursos = null;
-
+		fSinCursos = null;
+		fconCursos = null;
+		cJava = null;
+		cPhP = null;
+		cAndroid = null;
+		lista=null;
+		totalInicioCursos = 0;
 	}
 
+	
 	@Test
 	public void testConstructorSinCursos() {
-
-		assertEquals("Marta", f1.getNombre());
-		assertEquals("Lekue", f1.getApellido1());
-		assertEquals("Arriaga", f1.getApellido2());
-		assertEquals("33333333C", f1.getDni());
-		assertEquals("marta@gmail.com", f1.getEmail());
-
-		assertNotNull(f1.getCursos());
-		assertNotNull(f2.getCursos());
-		assertEquals(cursos.size(), f2.getCursos().size());
-		assertEquals(0, f1.getCursos().size());
-
-		assertTrue(f2.asignarCurso(c4));
-		assertEquals(4, f2.getCursos().size());
 		
-		f2.asignarCurso(c5);
-		f2.asignarCurso(c6);
-		assertEquals(6, f2.getCursos().size());
-		
-		f2.desAsignarCurso(c5);
-		assertEquals(5, f2.getCursos().size());
-		assertFalse(f2.desAsignarCurso(c5));
-		
-		assertFalse(f2.asignarCurso(null));
-		assertEquals(5, f2.getCursos().size());
-		
-		assertFalse(f1.desAsignarCurso(c5));
-		assertFalse(f1.desAsignarCurso(new Curso("", "", 0)));
-		assertFalse(f1.desAsignarCurso(null));
+		assertEquals("Marta", fSinCursos.getNombre());
+		assertEquals("Lekue", fSinCursos.getApellido1());
+		assertEquals("Arriaga", fSinCursos.getApellido2());
+		assertEquals("33333333C", fSinCursos.getDni());
+		assertEquals("marta@gmail.com", fSinCursos.getEmail());
 
+		assertNotNull(fSinCursos.getCursos());
+		assertEquals(0, fSinCursos.getCursos().size());
+
+		
 	}
-
+	
 	@Test
-	public void testConstructorParametros() {
+	public void testConstructorConCursos() {
+		
+		
+		assertEquals("Marta", fconCursos.getNombre());
+		assertEquals("Lekue", fconCursos.getApellido1());
+		assertEquals("Arriaga", fconCursos.getApellido2());
+		assertEquals("33333333C", fconCursos.getDni());
+		assertEquals("marta@gmail.com", fconCursos.getEmail());
 
-		assertNotNull(f1);
+		assertNotNull(fconCursos.getCursos());
+		assertEquals( lista.size() , fconCursos.getCursos().size());
+		
+		//formador con cursos null
+		Formador fCursosNull = new Formador("Marta", "Lekue", "Arriaga", "33333333C", "marta@gmail.com", null );
+		assertNotNull(fCursosNull.getCursos());
+		assertEquals( 0 , fCursosNull.getCursos().size() );
 
+		
 	}
-
+	
+	
+	@Test
+	public void testAsigancionCursos() {
+						
+		fconCursos.asignarCurso(cAndroid);
+		assertEquals( totalInicioCursos , fconCursos.getCursos().size() );
+		
+		Curso cAndroidBis = new Curso("andr34534", "Android", 380);
+		assertFalse ( fconCursos.asignarCurso(cAndroidBis));
+		
+			
+	}
+	
+	@Test
+	public void testDesAsigacionCursos() {
+				
+		assertTrue( fconCursos.desAsignarCurso(cJava));
+		ArrayList<Curso>listado = fconCursos.getCursos();
+		assertEquals( totalInicioCursos-1 , listado.size() );		
+		assertEquals("Si desasignamo el curso " + cJava + " no deberia existir", -1 ,listado.indexOf(cJava));
+		
+	}
+	
+	@Test
+	public void testDesAsigacionCursos2() {
+		
+		Curso cJavaBis = new Curso("jav2857", "Java", 500);
+		assertTrue( fconCursos.desAsignarCurso(cJavaBis));
+				
+		/*
+		assertEquals( cJava, cJavaBis );
+		assertSame( cJava, cJavaBis );
+		*/
+		
+		ArrayList<Curso>listado = fconCursos.getCursos();
+		assertEquals( totalInicioCursos-1 , listado.size() );		
+		assertEquals("Si desasignamo el curso " + cJava + " no deberia existir", -1 ,listado.indexOf(cJava));
+		
+	}
+	
+	
+	
+	@Test
+	public void testDesAsigacionCursoNoExistente() {
+	
+		assertFalse( fconCursos.desAsignarCurso( new Curso("", "", 0 ) ));
+		assertEquals( totalInicioCursos , fconCursos.getCursos().size() );
+		
+		assertFalse( fconCursos.desAsignarCurso( null ));
+		assertEquals( totalInicioCursos , fconCursos.getCursos().size() );
+		
+		
+	}
+	
+	
+	
+	
 }
