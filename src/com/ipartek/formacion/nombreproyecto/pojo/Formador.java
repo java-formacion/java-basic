@@ -2,7 +2,7 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 import java.util.ArrayList;
 
-public class Formador extends Persona {
+public class Formador extends Persona implements Icurso {
 
 	private ArrayList<Curso> cursos;
 	
@@ -24,11 +24,25 @@ public class Formador extends Persona {
 
 
 	public ArrayList<Curso> getCursos() {
-		return cursos;
+		return this.cursos;
 	}
 
 	public void setCursos(ArrayList<Curso> cursos) {
 		this.cursos = cursos;
+	}
+
+
+	@Override
+	public boolean asignarCurso(Curso curso) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean desAsignarCurso(Curso curso) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 		
