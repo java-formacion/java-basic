@@ -22,16 +22,17 @@ public class Formador extends Persona implements Icurso{
 		}	
 	}
 
-
+	
 	@Override
 	public ArrayList<Curso> getCursos() {
-		return listaCursos;
+		return this.listaCursos;
 	}
 
 
 	@Override
 	public boolean asignarCurso(Curso curso) {
-		if (listaCursos.add(curso)){
+		if (curso!=null){
+			this.listaCursos.add(curso);
 			return true;
 		}else{
 			return false;
@@ -41,11 +42,11 @@ public class Formador extends Persona implements Icurso{
 
 	@Override
 	public boolean desAsignarCurso(Curso curso) {
-		if (listaCursos.remove(curso)==true){
-			return true;
-		}else{
-			return false;
+		boolean resul=false;
+		if (listaCursos.indexOf(curso) !=-1){
+			resul = this.listaCursos.remove(curso);
 		}
+		return resul;
 	}
 	
 }
