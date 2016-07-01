@@ -96,7 +96,10 @@ public class FormadorTest {
 	public void testAsigancionCursos() {
 						
 		fconCursos.asignarCurso(cAndroid);
-		assertEquals( totalInicioCursos+1 , fconCursos.getCursos().size() );
+		assertEquals( totalInicioCursos , fconCursos.getCursos().size() );
+		
+		Curso cAndroidBis = new Curso("andr34534", "Android", 380);
+		assertFalse ( fconCursos.asignarCurso(cAndroidBis));
 		
 			
 	}
@@ -111,13 +114,16 @@ public class FormadorTest {
 		
 	}
 	
+	@Test
 	public void testDesAsigacionCursos2() {
 		
-		Curso cJavaNuevo = new Curso("jav2857", "Java", 500);
-		assertTrue( fconCursos.desAsignarCurso(cJavaNuevo));
+		Curso cJavaBis = new Curso("jav2857", "Java", 500);
+		assertTrue( fconCursos.desAsignarCurso(cJavaBis));
 				
-		assertEquals( cJava, cJavaNuevo );
-		assertSame( cJava, cJavaNuevo );
+		/*
+		assertEquals( cJava, cJavaBis );
+		assertSame( cJava, cJavaBis );
+		*/
 		
 		ArrayList<Curso>listado = fconCursos.getCursos();
 		assertEquals( totalInicioCursos-1 , listado.size() );		
