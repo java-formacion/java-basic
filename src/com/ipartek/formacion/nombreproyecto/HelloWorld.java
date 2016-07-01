@@ -1,50 +1,25 @@
 package com.ipartek.formacion.nombreproyecto;
 
 import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
-import com.ipartek.formacion.nombreproyecto.pojo.Libro;
-import com.ipartek.formacion.nombreproyecto.pojo.Perro;
+import com.ipartek.formacion.nombreproyecto.pojo.*;
 
 public class HelloWorld {
 
 	public static void main(String[] args) {
-		
-		
-		//instanciar objeto<Candidato>
-		Candidato objeto = new Candidato();
-		
-		//sin encapsular
-		//objeto.nombre = "Ander";
-		
-		//encapsulado el atributo
-		objeto.setNombre("Ander");
-		
-		
-		//System.out.println("Hola " + objeto.nombre );
-		System.out.println("Hola " + objeto.getNombre() );
-		
-		
+		// TODO Auto-generated method stub
+		// instanciar objeto <Candidatos>
+
+		Libro l1 = new Libro("Java 7", "Roberto", "23355595", 320);
+		Libro l2 = new Libro("Quijote", "Cervantes", "43432432", 1000);
+
 		/*
-		objeto.apellido1 = "Uraga";
-		objeto.apellido2 = "Real";
-		objeto.dni = "1111111F";
+		c1.nombre = "rtrt";
+		c1.setApellidos("dsaf ", "dsadfas ", "435435643");
+
+		System.out.println("hola " + c1.nombre + c1.obtenerApellido1() + c1.obtenerApellido2() + c1.obtenerDNI());
+		System.out.println(l1.toString());
+		System.out.println(l2.toString());
 		*/
-				
-		//System.out.println("Hola " + objeto.nombre + " " + objeto.apellido1 + " " + objeto.apellido2 + " " + objeto.dni);
-  
-		Perro buba = new Perro("Buba");
-		buba.setEdad(7);
-		
-		System.out.println( buba.toString() );
-		
-		//instanciar objeto tipo Libro
-		Libro libroJava = new Libro("java 6");
-		libroJava.setAutor("Roberto Montero Miguel");
-		libroJava.setIsbn("deadasd-asdasd-232e");
-		libroJava.setPaginas(320);
-		
-		System.out.println(  libroJava.toString() );
-		
-		
 	}
 
 }
