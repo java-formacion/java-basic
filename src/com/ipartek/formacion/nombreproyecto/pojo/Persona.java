@@ -11,7 +11,25 @@ public class Persona {
 	protected String dni;
 	protected String email;
 	
-	//Constructor con parametros nombre y ape1
+	/**
+	 * Constructor de Persona que tiene como parámetros
+	 * @param nombre {@code String}
+	 * @param apellido1 {@code String}
+	 * @param apellido2 {@code String}
+	 * @param dni {@code String}
+	 * @param email {@code String}
+	 */
+	public Persona(String nombre, String apellido1, String apellido2, String dni, String email) {
+		super();
+		setNombre(nombre);
+		setApellido1(apellido1);
+		setApellido2(apellido2);		
+		this.dni = dni;
+		this.email = email;
+	}
+
+
+//Constructor con parametros nombre y ape1
 	public Persona(String nombre, String ape1) {
 		super();
 		setNombre(nombre);

@@ -16,7 +16,7 @@ public interface ICurso {
 	 * @param curso
 	 * @return
 	 */
-	public boolean asignarCurso(Object curso);
+	public boolean asignarCurso(Curso curso);
 	
 	
 	/**
@@ -24,6 +24,6 @@ public interface ICurso {
 	 * @param curso
 	 * @return
 	 */
-	public boolean desAsignarCurso(Object curso);
+	public boolean desAsignarCurso(Curso curso);
 	
 }

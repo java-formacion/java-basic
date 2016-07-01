@@ -20,9 +20,16 @@ public class Formador extends Persona implements ICurso {
 	private ArrayList<Curso> listaCursos = new ArrayList<Curso>();
 		
 
-	//Constructor con parametros
-	public Formador(String nombre, String ape1, ArrayList<Curso> cursos) {
-		super(nombre, ape1);
+	//	Constructor sin parametro ArrayList
+	public Formador(String nombre, String apellido1, String apellido2, String dni, String email) {
+		super(nombre, apellido1, apellido2, dni, email);		
+		this.listaCursos = new ArrayList<Curso>();
+	}
+		
+
+	//	Constructor con parametro ArrayList
+	public Formador(String nombre, String apellido1, String apellido2, String dni, String email, ArrayList<Curso> cursos) {
+		super(nombre, apellido1, apellido2, dni, email);
 		if (cursos != null){
 			this.listaCursos = cursos;
 		}else{
@@ -30,24 +37,36 @@ public class Formador extends Persona implements ICurso {
 		}
 		
 	}
-	
+
 
 	@Override
 	public ArrayList<Curso> getCursos() {
-		
 		return this.listaCursos;
 	}
 
-	@Override
-	public boolean asignarCurso(Object curso) {
-		
-		return false;
-	}
 
 	@Override
-	public boolean desAsignarCurso(Object curso) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean asignarCurso(Curso curso) {
+		boolean resul = false;
+		if (curso != null){
+				resul = this.listaCursos.add(curso);
+		}
+		return resul;	
 	}
+
+
+	@Override
+	public boolean desAsignarCurso(Curso curso) {
+		boolean resul = false;
+		if (this.listaCursos.indexOf(curso) != -1){
+			resul = this.listaCursos.remove(curso);
+		}
+		
+		return resul;	
+		
+	}
+	
+
+
 
 }
