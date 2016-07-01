@@ -36,6 +36,7 @@ public class Curso {
 	 * @param horas
 	 *            {@code int}
 	 */
+	
 	public Curso(String codigo, String nombre, int horas) {
 		this.codigo = codigo;		
 		setNombre(nombre);
