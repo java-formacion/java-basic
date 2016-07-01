@@ -48,7 +48,7 @@ public class Formador extends Persona implements Icurso {
 
 	@Override
 	public boolean desAsignarCurso(Curso curso) {
-		boolean resul = false;
+		boolean resul = false;		
 		if (curso != null) {
 			for (int i = 0; i < cursos.size(); i++) {
 				if (curso.getCodigo().equals(cursos.get(i).getCodigo())) {
