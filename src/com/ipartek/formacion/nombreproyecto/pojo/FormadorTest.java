@@ -11,6 +11,7 @@ import org.junit.Test;
 public class FormadorTest {
 
 	Formador f;
+	Curso cJava, cPhp, cVisual;
 	
 	
 	@BeforeClass
@@ -43,7 +44,6 @@ public class FormadorTest {
 
 		assertNotNull(f.getCursos());
 		assertEquals(0, f.getCursos().size());
-
 		
 	}
 	
@@ -52,7 +52,16 @@ public class FormadorTest {
 		
 		assertNotNull(f);
 
-		
+		cJava = new Curso("cod1", "Java 7", 510);
+		cPhp = new Curso("cod2", "PHP", 490);
+		cVisual = new Curso("cod3", "Visual .net", 510);
+		assertNotNull(f.getCursos());
+		assertTrue(f.asignarCurso(cJava));
+		assertTrue(f.asignarCurso(cPhp));
+		assertTrue(f.asignarCurso(cVisual));
+		assertEquals(3, f.getCursos().size());
+		assertTrue(f.desAsignarCurso(cVisual));
+		assertEquals(2, f.getCursos().size());
 	}
 
 }
