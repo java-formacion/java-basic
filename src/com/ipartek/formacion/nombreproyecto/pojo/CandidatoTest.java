@@ -2,34 +2,73 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-
 import org.junit.Test;
 
 public class CandidatoTest {
 
 	@Test
-	public void Candidatotest() {
-		
-		Candidato c = new Candidato("Mikel  ", "alonso", "AlONso", "00000000K", "mikel@kktel.com", 8);
-		
-		assertEquals("Mikel", c.getNom());
-		assertEquals("Alonso", c.getApell1());
-		assertEquals("Alonso", c.getApell2());
-		assertEquals("00000000K", c.getDni());
-		assertEquals("mikel@kktel.com", c.getEmail());
-		assertEquals(8, c.getNota());
-		assertEquals(true, c.isAceptado());
-		
-		c.setNota(-1);
-		assertEquals(0,c.getNota());
-		assertEquals(false,c.isAceptado());
-		
-		c.setNota(15);
-		assertEquals(10,c.getNota());
-		assertEquals(true,c.isAceptado());
-		
-		
+	public void testGetNota() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetNota() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testIsAceptado() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetNombre() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetNombre() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetApellido1() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetApellido1() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetApellido2() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetApellido2() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetDni() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetDni() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetEmail() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetEmail() {
+		fail("Not yet implemented");
 	}
 
 }

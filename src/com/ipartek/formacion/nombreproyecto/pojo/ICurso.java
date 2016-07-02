@@ -14,11 +14,11 @@ public interface ICurso {
 	 * @param curso
 	 * @return
 	 */
-	public boolean asignarCurso(ArrayList<Curso> curso);
+	public boolean asignarCurso(Curso curso);
 	/**
 	 * Eliminar de la lista un curso
 	 * @param curso
 	 * @return
 	 */
-	public boolean desAsignarCurso(ArrayList<Curso> curso);
+	public boolean desAsignarCurso(Curso curso);
 }

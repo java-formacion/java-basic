@@ -1,140 +1,95 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-import com.ipartek.formacion.nombreproyecto.Utilidades;
 
-/**
- * CLASE TIPO POJO PARA INSTANCIAR OBJETOS QUE REPRESENTAN UN CANDIDATO
- * los atributos de un candidato:
- * <ol>
- * <li>nombre</li>
- * <li>apellido1</li>
- * <li>apellido2</li>
- * <li>dni</li>
- * </ol>
- * @author Aitor
- *
- */
-/**
- * recuperamos el nombre del objeto
- * 
- * @param nombre
- */
-public class Candidato extends Persona{
-	
+public class Candidato extends Persona {
+
 	//Constantes
 	/**
-	 * 
+	 * NOTA_MINIMA {@code int} constante que guarda la nota mínima que se puede asignar
 	 */
-	static final int NOTA_MINIMA = 0;
-	static final int NOTA_MAXIMA = 10;
-	static final int NOTA_ACEPTADO = 5;
-	
+	public static final int NOTA_MINIMA = 0;
+	/**
+	 * NOTA_MAXIMA {@code int} constante que guarda la nota máxima que se puede asignar
+	 */
+	public static final int NOTA_MAXIMA = 10;
+	/**
+	 * NOTA_APROBADO {@code int} constante que guarda la nota a partir de la cual se considera aprobado
+	 */
+	public static final int NOTA_APROBADO = 5;
+
 	//Atributos
 	/**
-	 * 
+	 * {@code int} nota del Candidato
 	 */
 	private int nota;
 	
 	//Constructores
 	/**
-	 * 
-	 */
-	public Candidato() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
-	/**
-	 * 
-	 * @param nom
-	 * @param apell1
-	 * @param apell2
-	 * @param dni
-	 * @param email
-	 */
-	public Candidato(String nom, String apell1, String apell2, String dni, String email) {
-		super(nom, apell1, apell2, dni, email);
-		this.nota = NOTA_MINIMA;
-		// TODO Auto-generated constructor stub
-	}
-
-
-	/**
-	 * 
-	 * @param nom
-	 * @param apell1
-	 * @param apell2
+	 *  Constructor de la clase Candidato.
+	 *  
+	 *  @see Persona es la superClass
+	 *  
+	 * @param nombre
+	 * @param apellido1
+	 * @param apellido2
 	 * @param dni
 	 * @param email
 	 * @param nota
+	 * @throws CandidatoException 
 	 */
-	public Candidato(String nom, String apell1, String apell2, String dni, String email, int nota) {
-		super(nom, apell1, apell2, dni, email);
+	public Candidato(String nombre, String apellido1, String apellido2, String dni, String email, int nota) throws CandidatoException {
+		super(nombre, apellido1, apellido2, dni, email);		
+		//this.nota = nota;
 		this.setNota(nota);
 	}
 
-
-	//geters y seters
-
-	/**
-	 * @return the nota
-	 */
+	
+	//getters y setters	
 	public int getNota() {
 		return nota;
 	}
 
-
-
 	/**
-	 * @param nota the nota to set
+	 * Método setNota asigna una nota a un Candidato
+	 * Si nota es menor que NOTA_MINIMA asignamos NOTA_MINIMA
+	 * Si nota es mayor que NOTA_MAXIMA asignamos NOTA_MAXIMA
+	 * 
 	 */
-	public void setNota(int nota) {
+	public void setNota(int nota) throws CandidatoException{
 		
-		if (nota < NOTA_MINIMA){
-			
-			this.nota = NOTA_MINIMA;
-			
-		}else if(nota > NOTA_MAXIMA){
-			
-			this.nota = NOTA_MAXIMA;
-		}else {
-			
+		if (nota>NOTA_MAXIMA){
+			//this.nota = NOTA_MAXIMA;
+			throw new CandidatoException(CandidatoException.EXCEPTION_RANGO_NOTA_MAX);
+		}else if(nota<NOTA_MINIMA){
+			//this.nota = NOTA_MINIMA;
+			throw new CandidatoException(CandidatoException.EXCEPTION_RANGO_NOTA_MIN);
+		}else{
 			this.nota = nota;
-			
-		}
+		}		
 	}
-
-
-
+	
+	/**
+	 * Método estaAceptado nos indica si un Candidato2 está aceptado
+	 * Para ello, su nota debe ser igual o mayor a NOTA_APOROBADO
+	 *
+	 * @return aceptado {@code boolean}
+	 */
 	public boolean isAceptado(){
 		
 		boolean aceptado = false;
 		
-		if (this.nota >= NOTA_ACEPTADO){
-			
+		if(this.nota>=NOTA_APROBADO){
 			aceptado = true;
-			
 		}
 		
 		return aceptado;
-	
 	}
-
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
+	
 	@Override
 	public String toString() {
-		return "Candidato [nota=" + nota + ", nom=" + nom + ", apell1=" + apell1 + ", apell2=" + apell2 + ", dni=" + dni
-				+ ", email=" + email + "]";
+		return super.toString() + " Candidato [nota=" + nota + "]";
 	}
-
-
-	
-	
-	
 	
 
+	
 }

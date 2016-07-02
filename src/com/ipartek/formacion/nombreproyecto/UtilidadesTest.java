@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
+import com.ipartek.formacion.nombreproyecto.pojo.CandidatoException;
 
 public class UtilidadesTest {
 
@@ -42,12 +43,12 @@ public class UtilidadesTest {
 		
 	}
 	@Test
-	public void testVarios(){
+	public void testVarios() throws CandidatoException{
 		
-		Candidato c = new Candidato();
+		Candidato c = new Candidato("", "", "", "", "", 0);
 		assertTrue(c instanceof Candidato);
 		
-		Candidato c1 = new Candidato();
+		Candidato c1 = new Candidato("", "", "", "", "", 0);
 		
 		assertNotEquals(c,c1);  //no son iguales porque son dos objetos que apuntan a ubicaciones diferentes de memoria. para saber si son iguales utilizar clon
 		assertFalse(c.equals(c1));
