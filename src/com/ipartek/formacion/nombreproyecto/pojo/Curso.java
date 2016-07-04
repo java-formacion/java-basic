@@ -41,6 +41,8 @@ public class Curso {
 		setNombre(nombre);
 		this.horas = horas;
 	}
+	
+	//get y set
 
 	public String getCodigo() {
 		return codigo;
@@ -55,7 +57,8 @@ public class Curso {
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = Utilidades.capitalizar(nombre);
+		this.nombre = Utilidades.capitalizar(nombre);   //usamos el metodo Capitalizar creado en la clase Utilidades  
+														//para poner la primera letra en mayusculas.
 	}
 
 	public int getHoras() {
@@ -79,6 +82,7 @@ public class Curso {
 		return result;
 	}
 
+	//sobreescribimos el metodo equals y lo adaptamos a nuestras necesidades
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

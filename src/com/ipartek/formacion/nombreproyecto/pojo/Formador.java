@@ -6,11 +6,13 @@ public class Formador extends Persona implements Icurso {
 
 	private ArrayList<Curso> cursos;
 
+	//Constructor para Formador sin cursos
 	public Formador(String nombre, String apellido1, String apellido2, String dni, String email) {
 		super(nombre, apellido1, apellido2, dni, email);
 		this.cursos = new ArrayList<Curso>();
 	}
-
+	
+	//Constructor para Formador con cursos
 	public Formador(String nombre, String apellido1, String apellido2, String dni, String email,
 			ArrayList<Curso> cursos) {
 		super(nombre, apellido1, apellido2, dni, email);

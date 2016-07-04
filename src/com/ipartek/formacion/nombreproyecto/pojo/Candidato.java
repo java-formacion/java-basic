@@ -55,6 +55,11 @@ public class Candidato extends Persona {
 	 * Si nota es mayor que NOTA_MAXIMA asignamos NOTA_MAXIMA
 	 * 
 	 */ 
+	/**
+	 * Creamos una excepcion en caso de que nota sea <0 o >10
+	 * @param nota
+	 * @throws CandidatoException
+	 */
 	public void setNota(int nota) throws CandidatoException {
 		
 		if (nota>NOTA_MAXIMA){
@@ -70,7 +75,7 @@ public class Candidato extends Persona {
 	
 	/**
 	 * Método estaAceptado nos indica si un Candidato2 está aceptado
-	 * Para ello, su nota debe ser igual o mayor a NOTA_APOROBADO
+	 * Para ello, su nota debe ser igual o mayor a NOTA_APROBADO
 	 *
 	 * @return aceptado {@code boolean}
 	 */

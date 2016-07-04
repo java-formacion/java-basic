@@ -8,8 +8,8 @@ public class CandidatoException extends Exception{
 	private static final long serialVersionUID = -4228805270775125239L;
 	
 	
-	public static final String EXCEPTION_RANGO_NOTA_MIN = "nO PERMITDO NOTA MENOR QUE  " + Candidato.NOTA_MINIMA;
-	public static final String EXCEPTION_RANGO_NOTA_MAX = "nO PERMITDO NOTA MENOR QUE  " + Candidato.NOTA_MAXIMA;
+	public static final String EXCEPTION_RANGO_NOTA_MIN = "No permitido nota menor que " + Candidato.NOTA_MINIMA;
+	public static final String EXCEPTION_RANGO_NOTA_MAX = "No permitido nota mayor que " + Candidato.NOTA_MAXIMA;
 	
 	private String mensaje;
 	
@@ -18,7 +18,7 @@ public class CandidatoException extends Exception{
 		this.mensaje = mensaje;
 	}
 	
-	//escibimos getm  y pulssar CTRL+SPACE
+	//escibimos get  y pulsar CTRL+SPACE
 	@Override
 		public String getMessage() {
 			// retur super.getMessage();

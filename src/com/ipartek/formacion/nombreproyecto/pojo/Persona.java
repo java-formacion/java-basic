@@ -41,7 +41,8 @@ public class Persona {
 		this.email = email;
 	}
 
-
+	
+	//get and set
 	public String getNombre() {
 		return nombre;
 	}
@@ -100,8 +101,6 @@ public class Persona {
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
 	}
-	
-	
 	
 	
 }
