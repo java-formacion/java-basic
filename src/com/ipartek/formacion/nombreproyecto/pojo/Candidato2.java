@@ -40,10 +40,11 @@ public class Candidato2 extends Persona {
 	 * @param apellido2 {@code String}
 	 * @param dni {@code String}
 	 * @param email {@code String}
+	 * @throws CandidatoException 
 	 */
-	public Candidato2(String nombre, String apellido1, String apellido2, String dni, String email) {
+	public Candidato2(String nombre, String apellido1, String apellido2, String dni, String email, int nota) throws CandidatoException {
 		super(nombre, apellido1, apellido2, dni, email);
-		this.nota = NOTA_MINIMA;
+		this.setNota(nota);
 	}
 
 	public int getNota() {
@@ -51,17 +52,18 @@ public class Candidato2 extends Persona {
 	}
 
 	/**
-	 * Método setNota asigna una nota a un Candidato2
-	 * Si nota es menor que NOTA_MINIMA asignamos NOTA_MINIMA
-	 * Si nota es mayor que NOTA_MAXIMA asignamos NOTA_MAXIMA
-	 * @param nota {@code int}
+	 * 
+	 * @param nota
+	 * @throws CandidatoException
 	 */
-	public void setNota(int nota) {
+	public void setNota(int nota) throws CandidatoException {
 		
 		if (nota>NOTA_MAXIMA){
-			this.nota = NOTA_MAXIMA;
+			//this.nota = NOTA_MAXIMA;
+			throw new CandidatoException(CandidatoException.EXCEPTION_RANGO_NOTA_MAX);
 		}else if(nota<NOTA_MINIMA){
-			this.nota = NOTA_MINIMA;
+			//this.nota = NOTA_MINIMA;
+			throw new CandidatoException(CandidatoException.EXCEPTION_RANGO_NOTA_MIN);
 		}else{
 			this.nota = nota;
 		}
