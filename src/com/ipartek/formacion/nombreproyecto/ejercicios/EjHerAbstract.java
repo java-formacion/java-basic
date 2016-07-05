@@ -23,7 +23,6 @@ public class EjHerAbstract {
 		System.out.println(lc1.dibujar());
 		System.out.println(c1.dibujar());
 		
-		// TODO Auto-generated method stub
 
 		
 	}

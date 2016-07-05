@@ -2,6 +2,10 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 public class LineaColor extends Linea{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String color;
 
 	public String getColor() {
@@ -14,7 +18,6 @@ public class LineaColor extends Linea{
 	
 	@Override
 	public String dibujar() {
-		// TODO Auto-generated method stub
 		return super.dibujar() +" y color "+this.color;
 	}
 

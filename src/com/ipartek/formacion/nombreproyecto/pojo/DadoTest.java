@@ -4,8 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.ipartek.formacion.nombreproyecto.HelloWorld;
-
 public class DadoTest {
 
 	@Test

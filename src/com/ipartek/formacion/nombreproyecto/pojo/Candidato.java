@@ -20,14 +20,18 @@ public class Candidato extends Persona {
 	public Candidato(String nombre, String dni, String ap1, String ap2, String email) {
 		super(nombre, dni, ap1, ap2);
 		this.email=email;
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getNota() {
 		return nota;
 	}
 
-	public void setNota(int nota) {
+	public void setNota(int nota) throws CandidatoException {
+		if (nota>NOTA_MAX){
+			throw new CandidatoException(CandidatoException.EXCP_RANGO_NMAX);
+		} else if (nota<NOTA_MIN){
+			throw new CandidatoException(CandidatoException.EXCP_RANGO_NMIN);
+		}
 		this.nota = nota;
 	}
 

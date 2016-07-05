@@ -8,7 +8,7 @@ public class VehiculoElect extends Vehiculo {
 		super(nombre, numPlazas, potencia, dimensiones);
 		capacidBat=150f;
 		
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public float getCapacidBat() {

@@ -14,7 +14,6 @@ public class VehiculoDiesel extends Vehiculo {
 
 	public VehiculoDiesel(String nombre, int numPlazas, float potencia, float dimensiones) {
 		super(nombre, numPlazas, potencia, dimensiones);
-		// TODO Auto-generated constructor stub
 	}
 
 

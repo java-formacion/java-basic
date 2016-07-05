@@ -8,7 +8,6 @@ public class Prueba {
 
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Persona p1 = new Persona("fDtr ewtSd","dsaDSAa","fsdf","654366433","njldakl@as.com",0);
 		
 		

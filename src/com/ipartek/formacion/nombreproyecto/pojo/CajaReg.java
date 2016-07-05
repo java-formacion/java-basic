@@ -38,7 +38,7 @@ public class CajaReg {
 
 		int[] cambios = new int[BILLETES_MONEDAS.length];
 		
-		float resto = this.dinero-this.valor;
+		//float resto = this.dinero-this.valor;
 		//resto= Utilidades.round(resto, 2).floatValue();
 		
 		for (int i = 0; i <= BILLETES_MONEDAS.length; i++) {

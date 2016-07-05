@@ -11,7 +11,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class FormadorTest {
-
+	Curso cJava = new Curso("001", "Java", 500);
+	Curso cPhp= new Curso("002", "Php", 400);
+	Curso cVisualBasic= new Curso("003", "Vba", 300);
+	
 	Formador fCursos, fNoCursos;
 	
 	
@@ -30,11 +33,8 @@ public class FormadorTest {
 	public void setUp() throws Exception {
 		ArrayList<Curso> cursos = new ArrayList<Curso>();
 		Formador fCursos = new Formador("Marta", "33333333C", " arrIAga", "dsfsadfds");
-		Formador fNoCursos = new Formador("Marta", "33333333C", " arrIAga", "dsfsadfds");
 		
-		Curso cJava = new Curso("001", "Java", 500);
-		Curso cPhp= new Curso("002", "Php", 400);
-		Curso cVisualBasic= new Curso("003", "Vba", 300);
+		
 		
 		cursos.add(cJava);
 		cursos.add(cPhp);
@@ -55,8 +55,7 @@ public class FormadorTest {
 		assertEquals("33333333C", fCursos.obtenerDNI());
 
 
-		
-		
+
 		
 		assertNotNull(fCursos.getCursos());
 
@@ -68,6 +67,7 @@ public class FormadorTest {
 		
 		fCursos.desasignarCurso(cPhp);
 		assertEquals("Vba", fCursos.getCursos().get(1).getNombre());
+
 		
 	}
 

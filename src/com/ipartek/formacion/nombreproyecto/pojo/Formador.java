@@ -28,7 +28,6 @@ public class Formador extends Persona implements Icurso {
 	public boolean asignarCurso(Object curso) {
 		cursoAsg.add((Curso) curso);
 
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -41,14 +40,12 @@ public class Formador extends Persona implements Icurso {
 				}
 			}
 		}
-		
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	public Formador(String nombre, String dni, String ap1, String ap2) {
 		super(nombre, dni, ap1, ap2);
-		// TODO Auto-generated constructor stub
+
 	}
 
 /**

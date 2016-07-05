@@ -66,7 +66,7 @@ public class Vehiculo implements IArrancable{
 
 	@Override
 	public void arrancar() {
-		// TODO Auto-generated method stub
+		System.out.println();
 		
 	}
 
@@ -75,7 +75,7 @@ public class Vehiculo implements IArrancable{
 
 	@Override
 	public void checkConductor() {
-		// TODO Auto-generated method stub
+		System.out.println();
 		
 	}
 
@@ -84,7 +84,7 @@ public class Vehiculo implements IArrancable{
 
 	@Override
 	public void encenderLuces() {
-		// TODO Auto-generated method stub
+		System.out.println();
 		
 	}
 
