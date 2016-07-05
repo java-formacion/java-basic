@@ -6,6 +6,11 @@ package com.ipartek.formacion.nombreproyecto.pojo;
  */
 public final class DosRombos extends Rombo {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public String dibujar() {
 		

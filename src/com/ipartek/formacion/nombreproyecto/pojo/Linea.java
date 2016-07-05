@@ -2,13 +2,17 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 public class Linea extends ObjetoGrafico {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected int longitud;
 	
 	
 	
 	public Linea() {
 		this.longitud = 0;
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	public Linea(int longitud) {

@@ -1,6 +1,5 @@
 package com.ipartek.formacion.nombreproyecto;
 
-import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
 import com.ipartek.formacion.nombreproyecto.pojo.Libro;
 import com.ipartek.formacion.nombreproyecto.pojo.Perro;
 

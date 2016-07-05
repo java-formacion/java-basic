@@ -2,12 +2,16 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 public class Circulo extends ObjetoGrafico {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected int radio;
 		
 	
 	public Circulo() {
 		this.radio = 0;
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	

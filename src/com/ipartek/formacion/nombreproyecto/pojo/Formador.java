@@ -23,7 +23,7 @@ public class Formador extends Persona implements ICurso {
 
 	@Override
 	public ArrayList<Curso> getCursos() {
-		// TODO Auto-generated method stub
+		
 		return this.cursos;
 	}
 

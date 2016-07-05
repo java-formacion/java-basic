@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public abstract class ObjetoGrafico implements Imprimible, Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected int x;
 	protected int y;
 	

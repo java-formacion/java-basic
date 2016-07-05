@@ -1,7 +1,5 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-import com.ipartek.formacion.nombreproyecto.Utilidades;
-
 public class CajaRegistradora {
 
 	

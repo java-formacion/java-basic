@@ -1,12 +1,10 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 
 import org.junit.Test;
-
-import com.sun.org.glassfish.external.statistics.impl.AverageRangeStatisticImpl;
 
 public class CajaRegistradoraTest {
 	

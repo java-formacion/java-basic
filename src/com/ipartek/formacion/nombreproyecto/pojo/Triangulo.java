@@ -2,6 +2,10 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 public class Triangulo extends ObjetoGrafico {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected int a;
 	protected int b;
 	protected int c;

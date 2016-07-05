@@ -2,6 +2,10 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 public class LineaColor extends Linea {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected String color;
 	
 	
@@ -9,12 +13,12 @@ public class LineaColor extends Linea {
 	public LineaColor() {
 		super();
 		this.color = "ninguno";
-		// TODO Auto-generated constructor stub
+		
 	}
 	public LineaColor(int longitud) {
 		super(longitud);
 		this.color = "ninguno";
-		// TODO Auto-generated constructor stub
+		
 	}	
 	public LineaColor(String color) {
 		super();
