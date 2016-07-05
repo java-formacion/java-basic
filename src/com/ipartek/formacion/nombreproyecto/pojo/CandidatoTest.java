@@ -44,8 +44,13 @@ public class CandidatoTest {
 
 	@Test
 	public void testCandidato() {
-		fail();
-		//TODO probar test del constructor
+		// TODO probar test del constructor
+		assertEquals("Pepe", c.getNombre());
+		assertEquals("Gorriti", c.getApellido1());
+		assertEquals("Zurrutia", c.getApellido2());
+		assertEquals("1111111H", c.getDni());
+		assertEquals("pepe@gorriti.eu", c.getEmail());
+		assertEquals(Candidato.NOTA_MINIMA, c.getNota());
 
 	}
 
@@ -82,7 +87,7 @@ public class CandidatoTest {
 			c.setNota(Candidato.NOTA_APROBADO);
 
 		} catch (CandidatoException e) {
-			// 
+			//
 			e.printStackTrace();
 		}
 
@@ -101,7 +106,7 @@ public class CandidatoTest {
 			assertTrue(c.isAceptado());
 
 		} catch (CandidatoException e) {
-			// 
+			//
 			e.printStackTrace();
 		}
 
