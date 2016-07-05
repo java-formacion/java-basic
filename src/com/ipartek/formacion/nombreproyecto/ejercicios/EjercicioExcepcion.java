@@ -6,7 +6,7 @@ public class EjercicioExcepcion {
 		try {
 			metodoA();
 		} catch (Exception e) {             //capturamos e que es del tipo Exception
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 	}
@@ -24,6 +24,7 @@ public class EjercicioExcepcion {
 
 	// throws Exception indica que puede lanzar al metodo que llama a éste la Excepcion
 	// en el momento de que se produzca un fallo
+	@SuppressWarnings("null")
 	public static void metodoC() throws Exception {    
 		
 		System.out.println("Iniciado  metodoC");

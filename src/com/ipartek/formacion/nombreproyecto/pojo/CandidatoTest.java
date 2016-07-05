@@ -39,19 +39,10 @@ public class CandidatoTest {
 		c = null;
 	}
 
-	//@Test
-	@Ignore
+	@Test    //test para probar el constructor
 	public void testCandidato() {
-		try{
-			c.setNota(0);
-			assertEquals(false, c.isAceptado());
-			c.setNota(5);
-			assertEquals(true, c.isAceptado());
-			c.setNota(10);
-			assertEquals(true, c.isAceptado());
-		}catch(Exception e){
-			fail("No deberia haber fallado el test de isAceptado");
-		};
+		//TODO probar test cosntructor
+		
 		
 		
 		
@@ -82,19 +73,33 @@ public class CandidatoTest {
 		try{
 			c.setNota(4);
 			assertEquals(4, c.getNota());
-			System.out.println("ha pasado nota=4 sin lanzar excepciones");
 		}catch( CandidatoException e){
 			fail("No deberia haber fallado nota=4");
 		}
 		
 		
-		
+	}
+	
+	@Test(expected=CandidatoException.class)
+	public void testException() throws CandidatoException {
+		c.setNota(-1000);
 	}
 
-	//@Test
-	@Ignore
+	@Test    //test para probar el isAceptado
 	public void testIsAceptado() {
-		fail("Not yet implemented");
+		try{
+			c.setNota(Candidato.NOTA_MINIMA );
+			assertFalse( c.isAceptado());
+			
+			c.setNota(Candidato.NOTA_APROBADO );
+			assertTrue( c.isAceptado());
+			
+			c.setNota(Candidato.NOTA_MAXIMA );
+			assertTrue( c.isAceptado());
+			
+		}catch(Exception e){
+			fail("No deberia haber fallado el test de isAceptado");
+		};
 	}
 
 }
