@@ -24,14 +24,16 @@ public class EjercicioException {
 	 * 
 	 * @throws Exception
 	 */
+	@SuppressWarnings("null")
 	public static void metodoC() throws Exception {
 
 		System.out.println(" Iniciado metodoC");
 		try{
 			Object o = null;
 			o.toString();	
-			
+			//mas lineas...			
 			System.out.println(" Terminado correctamente metodoC");
+			
 		}catch(NullPointerException n){
 			System.out.println("Peta null");
 			

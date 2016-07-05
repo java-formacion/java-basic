@@ -7,6 +7,8 @@ package com.ipartek.formacion.nombreproyecto.pojo;
  */
 public final class DosTriangulos extends Triangulo {
 
+
+	private static final long serialVersionUID = -334898704309739758L;
 	private String tipo;
 
 	@Override
