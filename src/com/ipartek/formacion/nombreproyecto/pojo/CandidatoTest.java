@@ -43,10 +43,13 @@ public class CandidatoTest {
 	}
 
 	@Test
-	
+
 	public void testCandidato() {
-		fail("Not yet implemented");
-		//TODO probar test constructor
+		assertEquals("Pepe", c.getNombre());
+		assertEquals("Gorriti", c.getApellido1());
+		assertEquals("Zurrutia", c.getApellido2());
+		assertEquals("1111111H", c.getDni());
+		assertEquals("pepe@gorriti.eu", c.getEmail());
 
 	}
 
@@ -55,7 +58,6 @@ public class CandidatoTest {
 
 		// probar notas que no lancen CandidatoException
 		assertEquals(Candidato.NOTA_MINIMA, c.getNota());
-		// TODO probar el resto vosotros
 
 		// probar notas que lancen CandidatoException
 
@@ -66,7 +68,6 @@ public class CandidatoTest {
 		} catch (CandidatoException e) {
 			assertEquals(CandidatoException.EXCEPTION_RANGO_NOTA_MAX, e.getMessage());
 		}
-		
 
 		try {
 			c.setNota(Candidato.NOTA_MINIMA - 1);
@@ -75,37 +76,33 @@ public class CandidatoTest {
 		} catch (CandidatoException e) {
 			assertEquals(CandidatoException.EXCEPTION_RANGO_NOTA_MIN, e.getMessage());
 		}
-		
+
 		try {
 			c.setNota(4);
 			assertEquals(4, c.getNota());
-			
 
 		} catch (CandidatoException e) {
 			fail("Nota mal recogida");
-			
+
 		}
-		
 
 	}
-	
-	@Test(expected=CandidatoException.class)
-	public void testException() throws CandidatoException{
+
+	@Test(expected = CandidatoException.class)
+	public void testException() throws CandidatoException {
 		c.setNota(-234);
 	}
 
 	@Test
 
-	public void testIsAceptado() throws CandidatoException  {
+	public void testIsAceptado() throws CandidatoException {
 		c.setNota(Candidato.NOTA_MINIMA);
 		assertFalse(c.isAceptado());
 		c.setNota(Candidato.NOTA_APROBADO);
 		assertTrue(c.isAceptado());
 		c.setNota(Candidato.NOTA_MAXIMA);
-		assertTrue(c.isAceptado());		
+		assertTrue(c.isAceptado());
 
 	}
-	
-	
 
 }
