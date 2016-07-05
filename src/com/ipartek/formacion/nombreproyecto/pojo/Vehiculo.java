@@ -79,20 +79,20 @@ public class Vehiculo implements IArrancable{
 
 	@Override
 	public void checkConductor() {
-		// TODO Auto-generated method stub
+		System.out.println("checkConductor");
 		
 	}
 
 	@Override
 	public void encenderLuces() {
-		// TODO Auto-generated method stub
+		System.out.println("encenderLuces");
 		
 	}
 
 	@Override
 	public void sonerClaxon() {
-		// TODO Auto-generated method stub
 		
+		System.out.println("sonerClaxon");
 	}
 
 	

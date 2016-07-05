@@ -2,6 +2,9 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 public class Circulo extends ObjetoGrafico {
 
+	
+	private static final long serialVersionUID = 331657781553077660L;
+
 	public static int RADIO_DEFECTO = 1;
 	
 	private int radio;

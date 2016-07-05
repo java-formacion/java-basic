@@ -1,7 +1,6 @@
 package com.ipartek.formacion.nombreproyecto.ejercicios;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import com.ipartek.formacion.nombreproyecto.pojo.Vehiculo;
 import com.ipartek.formacion.nombreproyecto.pojo.VehiculoDiesel;

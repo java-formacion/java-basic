@@ -1,8 +1,10 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-import static org.junit.Assert.*;
-
-import java.util.ArrayList;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.Before;
@@ -32,6 +34,7 @@ public class Candidato2Test {
 			c = null;
 		}
 
+		
 		
 	//@Ignore para que no ejecute. Se pone en vez de @Test
 	@Test
@@ -65,17 +68,19 @@ public class Candidato2Test {
 		//probar el resto nosotros
 		try {
 			c.setNota(Candidato2.NOTA_MAXIMA);
+			assertEquals(Candidato2.NOTA_MAXIMA, c.getNota());
 		} catch (CandidatoException e1) {
 			fail("No debería fallar al asignar NOTA_MAXIMA");
 		}
-		assertEquals(Candidato2.NOTA_MAXIMA, c.getNota());
+		
 		
 		try {
 			c.setNota(Candidato2.NOTA_APROBADO);
+			assertEquals(Candidato2.NOTA_APROBADO, c.getNota());
 		} catch (CandidatoException e1) {
 			fail("No debería fallar al asignar NOTA_APROBADO");
 		}
-		assertEquals(Candidato2.NOTA_APROBADO, c.getNota());
+		
 		
 		//notas que lancen CandidatoException
 		try {
@@ -94,20 +99,31 @@ public class Candidato2Test {
 		
 	}
 	
+	//Para probar que lanza excepciones
+	@Test (expected=CandidatoException.class)
+	public void textException() throws CandidatoException{
+		c.setNota(-1000);
+	}
+	
 	
 	@Test
-	public void testIsAceptado() throws CandidatoException {
+	public void testIsAceptado() {
 		
-		assertFalse(c.estaAceptado());
-		
-		c.setNota(Candidato2.NOTA_APROBADO);
-		assertTrue(c.estaAceptado());
-		
-		c.setNota(Candidato2.NOTA_APROBADO -1);
-		assertFalse(c.estaAceptado());
-		
-		c.setNota(Candidato2.NOTA_MAXIMA);
-		assertTrue(c.estaAceptado());
+		try{
+			//NOTA_MINIMA
+			assertFalse(c.estaAceptado());
+			
+			c.setNota(Candidato2.NOTA_APROBADO);
+			assertTrue(c.estaAceptado());
+			
+			c.setNota(Candidato2.NOTA_APROBADO -1);
+			assertFalse(c.estaAceptado());
+			
+			c.setNota(Candidato2.NOTA_MAXIMA);
+			assertTrue(c.estaAceptado());
+		} catch (CandidatoException e){
+			fail("No debería haber fallado el test de isAceptado");
+		}
 		
 	}
 	
