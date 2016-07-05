@@ -26,7 +26,7 @@ public class CandidatoNuevoTest {
 	@Before
 	public void setUp() throws Exception {
 		try{
-			c = new CandidatoNuevo("bOrjA", "MAnso", CandidatoNuevo.NOTA_MINIMA);
+			c = new CandidatoNuevo("Borja", "Manso", CandidatoNuevo.NOTA_MINIMA);
 			
 		}catch(Exception e){
 			fail("No deberia haber fallado el SetUp");			
@@ -42,8 +42,16 @@ public class CandidatoNuevoTest {
 	@Test
 //	@Ignore Ignora el test
 	public void testCandidatoNuevo() {
-		assertEquals("Borja", c.getNombre());
-		assertEquals("Manso", c.getApellido1());
+		
+		try{
+			c.setNombre("gOrkA");
+			assertEquals("Gorka", c.getNombre());
+			
+			c.setApellido1("mANSO");
+			assertEquals("Manso", c.getApellido1());
+		}catch (Exception e){
+			fail("No se lanzó exception");
+		}
 	}
 
 	@Test
