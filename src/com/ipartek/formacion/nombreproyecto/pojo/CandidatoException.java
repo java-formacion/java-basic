@@ -3,8 +3,8 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 //""extends Exception"" para indicarle que deriva de Exception
 public class CandidatoException extends Exception{  
 	
-	//nos daba un warning en la clase /
-	//sobre ellas elegimos la segunda opcion y no sañade la siguiente linea
+	//nos daba un warning en la clase porque es Serializable  /
+	//sobre ellas elegimos la segunda opcion y nos añade la siguiente linea
 	private static final long serialVersionUID = -4228805270775125239L;
 	
 	

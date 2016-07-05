@@ -30,7 +30,7 @@ public class EjercicioExcepcion {
 		//iniciamos  con "try" la captura de una excepcion si se produce
 		try {
  			Object o = null;
-			o.toString();
+			o.toString();   //provocamos un NullPointerException
 			// aqui irian mas lineas de codigo ...
 			System.out.println("Terminado corecctamente metodoC");
 			

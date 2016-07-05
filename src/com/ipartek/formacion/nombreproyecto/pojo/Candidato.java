@@ -48,7 +48,7 @@ public class Candidato extends Persona {
 		return nota;
 	}
 
-	/*ESTE ES LA DOCUMNTAION QUE TENIA ANTES DE LA EXCEPTION
+	/*ESTE ES LA DOCUMENTACION QUE TENIA ANTES DE LA EXCEPTION
 	 /**
 	 * Método setNota asigna una nota a un Candidato
 	 * Si nota es menor que NOTA_MINIMA asignamos NOTA_MINIMA
@@ -64,6 +64,8 @@ public class Candidato extends Persona {
 		
 		if (nota>NOTA_MAXIMA){
 			//this.nota = NOTA_MAXIMA;
+			
+			//lanzamos nuestra propia exception
 			throw new CandidatoException( CandidatoException.EXCEPTION_RANGO_NOTA_MAX );
 		}else if(nota<NOTA_MINIMA){
 		//	this.nota = NOTA_MINIMA;
