@@ -1,16 +1,17 @@
 package com.ipartek.formacion.nombreproyecto;
 
 import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
+import com.ipartek.formacion.nombreproyecto.pojo.CandidatoException;
 import com.ipartek.formacion.nombreproyecto.pojo.Libro;
 import com.ipartek.formacion.nombreproyecto.pojo.Perro;
 
 public class HelloWorld {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CandidatoException {
 		
 		
 		//instanciar objeto<Candidato>
-		Candidato objeto = new Candidato("","");
+		Candidato objeto = new Candidato(",", ",", ",", ",", ",", 5);
 		
 		//sin encapsular
 		//objeto.nombre = "Ander";

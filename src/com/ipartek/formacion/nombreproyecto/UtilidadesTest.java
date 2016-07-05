@@ -1,10 +1,9 @@
 package com.ipartek.formacion.nombreproyecto;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
-
-import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
 
 public class UtilidadesTest {
 
@@ -31,15 +30,7 @@ public class UtilidadesTest {
 		assertEquals( "Ander", "   Ander    ".trim() );
 		
 		
-		Candidato c = new Candidato();
-		assertTrue ( c instanceof Candidato ); 
-		
-		Candidato c1 = new Candidato();
-		
-		assertNotEquals("No son iguales, aunque lo parezcan", c, c1 );
-		
-		assertFalse( c.equals(c1) );
-		
+			
 				
 	}
 	
