@@ -1,12 +1,14 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class CandidatoTest {
@@ -40,13 +42,10 @@ public class CandidatoTest {
 		
 	}
 
-	//@Test
-	@Ignore
+	@Test	
 	public void testCandidato() {
 		fail("Not yet implemented");
-		
-		
-		
+		//TODO probar test constructor		
 	}
 
 	@Test
@@ -54,8 +53,7 @@ public class CandidatoTest {
 		
 		//probar notas que no lancen CandidatoException
 		assertEquals( Candidato.NOTA_MINIMA, c.getNota() ) ;		
-		//TODO probar el resto vosotros
-		
+			
 		
 		//probar notas que lancen CandidatoException
 		
@@ -70,14 +68,49 @@ public class CandidatoTest {
 		} 	
 		
 		
+		try{
+			c.setNota(Candidato.NOTA_MINIMA - 1);  //asigno al Candidato una nota de -1 (MINIMA-1)
+			fail("No se lanzó CandidatoException"); //ponemos esta linea porque si no funciona la ejecutara
+		}catch( CandidatoException e){
+			assertEquals(CandidatoException.EXCEPTION_RANGO_NOTA_MIN, e.getMessage());
+		}
+		
+		//PROBAR NOTA QUE NO LANCE EXCEPTION
+		try{
+			c.setNota(4);
+			assertEquals(4, c.getNota());
+			
+		}catch( CandidatoException e){
+			fail("No deberia haber fallado nota=4");
+		}
+		
+		
+		
 		
 		
 	}
 
-	//@Test
-	@Ignore
+	@Test(expected=CandidatoException.class)
+	public void testException() throws CandidatoException {		
+		c.setNota(-1000);
+	}
+	
+	@Test	
 	public void testIsAceptado() {
-		fail("Not yet implemented");
+		try{
+			c.setNota( Candidato.NOTA_MINIMA );
+			assertFalse(c.isAceptado());
+			
+			c.setNota(Candidato.NOTA_APROBADO);
+			assertTrue ( c.isAceptado());
+			
+			c.setNota(Candidato.NOTA_MAXIMA);
+			assertTrue( c.isAceptado());
+			
+		}catch(Exception e){
+			fail("No deberia haber fallado el test de isAceptado");
+		};
+		
 	}
 
 }
