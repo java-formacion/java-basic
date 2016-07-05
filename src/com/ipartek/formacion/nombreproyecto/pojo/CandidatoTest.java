@@ -1,12 +1,14 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class CandidatoTest {
@@ -40,18 +42,16 @@ public class CandidatoTest {
 		c1 = null;
 		c2 = null;
 	}
-	
-	//@Test
-	@Ignore
+	//@Ignore     Instruccion para que eclipse ignore la funcion
+	@Test
 	public void testCandidato() {
-		
+		fail("Not yet implemented");
+		//TODO probar test constructor
 	}
 	@Test
 	public void testSetNota(){
 		//probar notas que no lancen Exception
 		assertEquals(Candidato.NOTA_MINIMA, c.getNota());
-		
-		//TODO probar el resto vosotros
 		
 		//Probar notas que lancen CandidatoException
 		try{
@@ -73,4 +73,10 @@ public class CandidatoTest {
 		assertTrue(c1.isAceptado());
 		assertTrue(c2.isAceptado());
 	}
+	
+	@Test(expected=CandidatoException.class)
+	public void testException() throws CandidatoException{
+		c.setNota(-1000);
+	}
+	
 }
