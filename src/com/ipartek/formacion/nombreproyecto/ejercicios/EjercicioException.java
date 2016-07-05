@@ -6,7 +6,6 @@ public class EjercicioException {
 		try {
 			metodoA();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

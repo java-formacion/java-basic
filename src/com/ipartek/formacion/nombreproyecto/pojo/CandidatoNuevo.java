@@ -52,11 +52,11 @@ public class CandidatoNuevo extends Persona {
 	public void setNota(int nota) throws CandidatoException{
 		if (nota < NOTA_MINIMA){
 //			this.nota = NOTA_MINIMA;
-			throw new CandidatoException(CandidatoException.EXCEPTION_RANGO_NOTA_MAX);
+			throw new CandidatoException(CandidatoException.EXCEPTION_RANGO_NOTA_MIN);
 			
 		}else if (nota > NOTA_MAXIMA){
 //			this.nota = NOTA_MAXIMA;
-			throw new CandidatoException(CandidatoException.EXCEPTION_RANGO_NOTA_MIN);
+			throw new CandidatoException(CandidatoException.EXCEPTION_RANGO_NOTA_MAX);
 			
 		}else{
 			this.nota = nota;
