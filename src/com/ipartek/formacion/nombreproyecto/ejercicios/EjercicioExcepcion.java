@@ -5,8 +5,7 @@ public class EjercicioExcepcion {
 	public static void main(String[] args) {
 		try {
 			metodoA();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		} catch (Exception e) {			
 			e.printStackTrace();
 		}
 	}
@@ -25,6 +24,7 @@ public class EjercicioExcepcion {
 	 * 
 	 * @throws Exception
 	 */
+	@SuppressWarnings("null")
 	public static void metodoC() throws Exception {
 
 		System.out.println("Iniciado metodo C");

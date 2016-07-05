@@ -2,6 +2,7 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 public class LineaColor extends Linea {
 
+	private static final long serialVersionUID = 7662548337454821111L;
 	
 	private String color;
 	
