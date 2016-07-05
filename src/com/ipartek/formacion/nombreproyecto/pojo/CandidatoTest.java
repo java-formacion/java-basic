@@ -44,9 +44,14 @@ public class CandidatoTest {
 	}
 	//@Ignore     Instruccion para que eclipse ignore la funcion
 	@Test
-	public void testCandidato() {
-		fail("Not yet implemented");
-		//TODO probar test constructor
+	public void testCandidato() throws CandidatoException {
+		Candidato c3 = new Candidato("Andoni", "Luna", "Moreno", "45822469M", "andoniluna22@hotmail.com",Candidato.NOTA_MAXIMA);
+		assertEquals("Andoni", c3.getNombre());
+		assertEquals("Luna", c3.getApellido1());
+		assertEquals("Moreno", c3.getApellido2());
+		assertEquals("45822469M", c3.getDni());
+		assertEquals("andoniluna22@hotmail.com", c3.getEmail());
+		assertEquals(Candidato.NOTA_MAXIMA, c3.getNota());
 	}
 	@Test
 	public void testSetNota(){
