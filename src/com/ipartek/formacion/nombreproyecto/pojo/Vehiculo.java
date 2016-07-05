@@ -66,19 +66,19 @@ public class Vehiculo implements IArrancable {
 
 	@Override
 	public void checkConduntor() {
-		// TODO Auto-generated method stub
+		// 
 		
 	}
 
 	@Override
 	public void encenderLuces() {
-		// TODO Auto-generated method stub
+		// 
 		
 	}
 
 	@Override
 	public void sonarClaxon() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	

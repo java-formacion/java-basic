@@ -34,14 +34,14 @@ public class Formador extends Persona implements Icurso {
 
 	@Override
 	public boolean asignarCurso(Curso curso) {
-		// TODO Auto-generated method stub
+		// 
 		return false;
 	}
 
 
 	@Override
 	public boolean desAsignarCurso(Curso curso) {
-		// TODO Auto-generated method stub
+		// 
 		return false;
 	}
 	

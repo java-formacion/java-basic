@@ -3,11 +3,11 @@ package com.ipartek.formacion.nombreproyecto.ejercicios;
 public class EjercicioExcepcion {
 
 	public static void main(String[] args){
-		// TODO Auto-generated method stub
+		// 
 		try {
 			metodoA();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			// 
 			e.printStackTrace();
 		}
 	}
@@ -22,6 +22,7 @@ public class EjercicioExcepcion {
 		System.out.println("Terminado metodo B");
 	}
 
+	@SuppressWarnings("null")
 	public static void metodoC() throws Exception {
 		
 		System.out.println("Iniciado metodo C");
