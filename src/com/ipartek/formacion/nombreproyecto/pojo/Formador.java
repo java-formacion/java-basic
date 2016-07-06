@@ -2,8 +2,6 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 import java.util.ArrayList;
 
-import com.ipartek.formacion.helloweb.Persona;
-
 public class Formador extends Persona implements Icurso {
 
 	private ArrayList<Curso> cursos;
