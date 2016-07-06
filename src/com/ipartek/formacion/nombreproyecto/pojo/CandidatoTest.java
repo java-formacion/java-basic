@@ -6,7 +6,6 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class CandidatoTest {
@@ -41,11 +40,15 @@ public class CandidatoTest {
 
 	@Test    //test para probar el constructor
 	public void testCandidato() {
-		//TODO probar test cosntructor
+		//TODO probar test constructor
+		/**try{
+			
+		}catch(CandidatoException e){
+			
+		}
 		
 		
-		
-		
+		*/
 	}
 
 	@Test
