@@ -1,7 +1,7 @@
 package com.ipartek.formacion.nombreproyecto;
 
-import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
-import com.ipartek.formacion.nombreproyecto.pojo.CandidatoException;
+import com.ipartek.formacion.helloweb.Candidato;
+import com.ipartek.formacion.helloweb.CandidatoException;
 import com.ipartek.formacion.nombreproyecto.pojo.Libro;
 import com.ipartek.formacion.nombreproyecto.pojo.Perro;
 

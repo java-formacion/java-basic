@@ -1,7 +1,5 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-import com.ipartek.formacion.nombreproyecto.Utilidades;
-
 /**
  * Clase Persona con atributos
  * <ol>
@@ -22,7 +20,7 @@ public class Persona {
 	protected String email;
 	
 	/**
-	 * Constructor de Persona que tiene como parámetros
+	 * Constructor de Persona que tiene como parï¿½metros
 	 * @param nombre {@code String}
 	 * @param apellido1 {@code String}
 	 * @param apellido2 {@code String}
