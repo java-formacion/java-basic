@@ -30,7 +30,7 @@ public class Dado {
 		return (int) (Math.random()*aAlumnos.length);
 	}
 
-	
+	 
 	
 	public static void main(String[] args) {
 		
