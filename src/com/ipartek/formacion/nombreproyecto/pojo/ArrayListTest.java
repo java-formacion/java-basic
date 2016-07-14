@@ -2,6 +2,7 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 
 import static org.junit.Assert.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -27,13 +28,24 @@ public class ArrayListTest {
 		assertTrue( paises.isEmpty() );
 		assertEquals (0, paises.size() );
 		
-		//añadir paises al arrayList
+		//aï¿½adir paises al arrayList
 		paises.add(ALEMANIA);
 		paises.add(ITALIA);
 		paises.add(FRANCIA);
 		paises.add(FRANCIA);
 		
-		//COMPROBAMOS QUE EL tamaños del Array es 4 despues de añadir los 4 elementos
+		
+		//Realizar Iterator y contar elementos
+		int cont = 0;
+		String paisActual= "";
+		Iterator<String> it = paises.iterator();
+		while (it.hasNext()){
+			cont++;
+			paisActual = (String)it.next();
+		}
+		
+		
+		//COMPROBAMOS QUE EL tamaï¿½os del Array es 4 despues de aï¿½adir los 4 elementos
 		assertEquals (4, paises.size() );
 		
 		//comprobamos que lo que hay en cada posicion ese lo que hemos metido
@@ -43,13 +55,13 @@ public class ArrayListTest {
 		assertEquals( FRANCIA, paises.get(3));
 		
 		//buscamos en un arrayList donde esta un valor
-		//la funcion indexOf(valor) me devuelve la primera posición dentro del arrayList 
+		//la funcion indexOf(valor) me devuelve la primera posiciï¿½n dentro del arrayList 
 		//donde encuentra el valor. Si el valor no se encuentra devuelve un -1.
 		//hacemos un par de comprobaciones para ver como funciona
 		assertEquals ( 2, paises.indexOf(FRANCIA) );
 		assertEquals ( -1, paises.indexOf("Txikitistan") );
 		
-		//quitamos del arrayList el elemento de la posición 3 y reordena el arrayList
+		//quitamos del arrayList el elemento de la posiciï¿½n 3 y reordena el arrayList
 		// el elemento que estaba en l posicion 4 pasa a la 3 y asi sucesivamente
 		
 		// paises.remove(3);
