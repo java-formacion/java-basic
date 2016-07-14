@@ -1,8 +1,12 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -31,6 +35,21 @@ public class ArrayListTest {
 		paises.add(ITALIA);
 		paises.add(FRANCIA);
 		paises.add(FRANCIA);
+
+		/*---------------------------------------------------------------------------------------------------------*/
+		
+		//realizar Iterator, contar elementos y cargar nombre de los paises en paisActual
+		int cont=0;
+		String paisActual = "";
+		Iterator it = paises.iterator();
+		while (it.hasNext()){
+			cont++;
+			paisActual = (String) it.next();
+		}
+		assertEquals(4, cont);
+		
+		
+		/*----------------------------------------------------------------------------------------------------------*/
 		
 		assertEquals (4 , paises.size());
 		
