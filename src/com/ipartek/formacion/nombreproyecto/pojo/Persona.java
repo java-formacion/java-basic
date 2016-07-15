@@ -22,7 +22,7 @@ public class Persona {
 	protected String email;
 	
 	/**
-	 * Constructor de Persona que tiene como parámetros
+	 * Constructor de Persona que tiene como parï¿½metros
 	 * @param nombre {@code String}
 	 * @param apellido1 {@code String}
 	 * @param apellido2 {@code String}
