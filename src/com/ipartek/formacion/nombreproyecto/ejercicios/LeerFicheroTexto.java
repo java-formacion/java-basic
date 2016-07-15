@@ -20,7 +20,7 @@ public class LeerFicheroTexto {
 		
 		int cont = 0;
 		int cont2 = 0;
-		
+				
 		ArrayList pErronea[] = null;
 		
 		while ( (linea = br.readLine()) != null){
