@@ -5,11 +5,11 @@ public class Candidato extends Persona {
 
 	//Constantes
 	/**
-	 * NOTA_MINIMA {@code int} constante que guarda la nota mínima que se puede asignar
+	 * NOTA_MINIMA {@code int} constante que guarda la nota mï¿½nima que se puede asignar
 	 */
 	public static final int NOTA_MINIMA = 0;
 	/**
-	 * NOTA_MAXIMA {@code int} constante que guarda la nota máxima que se puede asignar
+	 * NOTA_MAXIMA {@code int} constante que guarda la nota mï¿½xima que se puede asignar
 	 */
 	public static final int NOTA_MAXIMA = 10;
 	/**
@@ -50,7 +50,7 @@ public class Candidato extends Persona {
 	}
 
 	/**
-	 * Método setNota asigna una nota a un Candidato
+	 * Mï¿½todo setNota asigna una nota a un Candidato
 	 * Si nota es menor que NOTA_MINIMA asignamos NOTA_MINIMA
 	 * Si nota es mayor que NOTA_MAXIMA asignamos NOTA_MAXIMA
 	 * 
@@ -67,9 +67,17 @@ public class Candidato extends Persona {
 			this.nota = nota;
 		}		
 	}
+	public class MiExcepcion extends Exception{
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+		
+	}
 	
 	/**
-	 * Método estaAceptado nos indica si un Candidato2 está aceptado
+	 * Mï¿½todo estaAceptado nos indica si un Candidato2 estï¿½ aceptado
 	 * Para ello, su nota debe ser igual o mayor a NOTA_APOROBADO
 	 *
 	 * @return aceptado {@code boolean}
@@ -89,7 +97,9 @@ public class Candidato extends Persona {
 	public String toString() {
 		return super.toString() + " Candidato [nota=" + nota + "]";
 	}
-	
+	public String getNom(String p){
+		return "";
+	}
 
 	
 }

@@ -33,15 +33,16 @@ public class ArrayListTest {
 		paises.add(FRANCIA);
 		paises.add(FRANCIA);
 		
+		
 		//Realizar Iterator y contar elementos
 		int cont = 0;
 		String paisActual = "";
 		Iterator<String> it = paises.iterator();
-		while (it.hasNext()){
+		while ( it.hasNext() ){
 			cont++;
-			paisActual = (String)it.next();
+			paisActual = (String)it.next();			
 		}
-		
+		assertEquals (4 , cont );		
 		assertEquals (4 , paises.size());
 		
 		assertEquals (ALEMANIA,  paises.get(0));
@@ -64,6 +65,16 @@ public class ArrayListTest {
 		assertEquals (ITALIA,  paises.get(2));
 		
 		
+		
+	}
+	
+	@Test(timeout=1)	//si tarda mas de 1 milisegundo
+	public void testVelocidad() throws InterruptedException{
+		/*
+		 * 
+		 */
+		Thread.sleep(1000);	//para la ejecucion por un segundo
+		assertTrue(true);
 		
 	}
 

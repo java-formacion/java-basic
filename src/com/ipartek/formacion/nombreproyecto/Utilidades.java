@@ -1,6 +1,8 @@
 package com.ipartek.formacion.nombreproyecto;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Utilidades {
 
@@ -100,7 +102,7 @@ public class Utilidades {
 				}
 				
 	//		}else{
-	//			sCadena = "la cadena contiene valores que no son válidos";
+	//			sCadena = "la cadena contiene valores que no son vï¿½lidos";
 	//		}
 			
 		}else{
@@ -115,6 +117,21 @@ public class Utilidades {
         BigDecimal bd = new BigDecimal(d);
         bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_UP);       
         return bd;
+}
+	
+	public static String conversorMilisegundos(long millis){
+		
+		long hours = 0;
+		long minutes = 0;
+		long seconds = 0;
+		hours = TimeUnit.MILLISECONDS.toHours(millis);
+	    millis -= TimeUnit.HOURS.toMillis(hours);
+	    minutes = TimeUnit.MILLISECONDS.toMinutes(millis);
+	    millis -= TimeUnit.MINUTES.toMillis(minutes);
+	    seconds = TimeUnit.MILLISECONDS.toSeconds(millis);
+	    millis -= TimeUnit.SECONDS.toMillis(seconds);
+	    
+	    return ("Tiempo: " +hours + " horas, "+minutes + " minutos, "+seconds + " segundos, "+millis + " milisegundos.");
 }
 
 }
