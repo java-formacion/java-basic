@@ -68,4 +68,13 @@ public class ArrayListTest {
 		
 	}
 
+	
+	@Test(timeout=1)
+	public void testVelocidad() throws InterruptedException {
+		
+		Thread.sleep(1000);		
+		assertTrue(true);
+		
+	}
+	
 }
