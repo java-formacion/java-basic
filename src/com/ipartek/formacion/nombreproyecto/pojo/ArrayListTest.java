@@ -73,8 +73,16 @@ public class ArrayListTest {
 		
 		paises.add(1, FRANCIA);
 		
-		
-		
+	}
+	
+	@Test(timeout=1)
+	public void testVelocidad() throws InterruptedException{
+		/*int cont =0 ;
+		for(int i=0; i<1000000000;i++){
+			cont ++;
+		}*/
+		Thread.sleep(1000);
+		assertTrue(true);
 		
 	}
 
