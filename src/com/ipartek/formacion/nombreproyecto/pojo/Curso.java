@@ -13,6 +13,7 @@ import com.ipartek.formacion.nombreproyecto.Utilidades;
 
 public class Curso {
 
+	
 	/**
 	 * codigo alfanumerico usado como identificador unico del {@code Curso}
 	 */

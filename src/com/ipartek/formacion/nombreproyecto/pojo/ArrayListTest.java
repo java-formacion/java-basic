@@ -11,69 +11,72 @@ import java.util.Iterator;
 import org.junit.Test;
 
 public class ArrayListTest {
-	
+
 	ArrayList<String> paises;
-	static final String ITALIA   = "Italia";
+	static final String ITALIA = "Italia";
 	static final String ALEMANIA = "Alemania";
-	static final String FRANCIA  = "Francia";
+	static final String FRANCIA = "Francia";
 
 	@Test
 	public void test() {
-		
-				
-		assertNull (paises);
-		
-		//inicializamos arraylist
+
+		assertNull(paises);
+
+		// inicializamos arraylist
 		paises = new ArrayList<String>();
-		assertNotNull (paises);
-		
-		assertTrue ( paises.isEmpty() );
-		assertEquals (0 , paises.size());
-		
-		
+		assertNotNull(paises);
+
+		assertTrue(paises.isEmpty());
+		assertEquals(0, paises.size());
+
 		paises.add(ALEMANIA);
 		paises.add(ITALIA);
 		paises.add(FRANCIA);
 		paises.add(FRANCIA);
 
 		/*---------------------------------------------------------------------------------------------------------*/
-		
-		//realizar Iterator, contar elementos y cargar nombre de los paises en paisActual
-		int cont=0;
+
+		// realizar Iterator, contar elementos y cargar nombre de los paises en
+		// paisActual
+		int cont = 0;
 		String paisActual = "";
 		Iterator it = paises.iterator();
-		while (it.hasNext()){
+		while (it.hasNext()) {
 			cont++;
 			paisActual = (String) it.next();
 		}
 		assertEquals(4, cont);
-		
-		
+
 		/*----------------------------------------------------------------------------------------------------------*/
-		
-		assertEquals (4 , paises.size());
-		
-		assertEquals (ALEMANIA,  paises.get(0));
-		assertEquals (ITALIA,  paises.get(1));
-		assertEquals (FRANCIA,  paises.get(2));
-		assertEquals (FRANCIA,  paises.get(3));
-		
-		assertEquals ( 2, paises.indexOf(FRANCIA) );
-		assertEquals ( -1, paises.indexOf("Txikitistan") );
-		
-		paises.remove( paises.size()-1 );
-		paises.remove( paises.size()-1 );
-		
-		assertEquals (2 , paises.size());
-		
+
+		assertEquals(4, paises.size());
+
+		assertEquals(ALEMANIA, paises.get(0));
+		assertEquals(ITALIA, paises.get(1));
+		assertEquals(FRANCIA, paises.get(2));
+		assertEquals(FRANCIA, paises.get(3));
+
+		assertEquals(2, paises.indexOf(FRANCIA));
+		assertEquals(-1, paises.indexOf("Txikitistan"));
+
+		paises.remove(paises.size() - 1);
+		paises.remove(paises.size() - 1);
+
+		assertEquals(2, paises.size());
+
 		paises.add(1, FRANCIA);
-		
-		assertEquals (ALEMANIA,  paises.get(0));
-		assertEquals (FRANCIA,  paises.get(1));
-		assertEquals (ITALIA,  paises.get(2));
-		
-		
-		
+
+		assertEquals(ALEMANIA, paises.get(0));
+		assertEquals(FRANCIA, paises.get(1));
+		assertEquals(ITALIA, paises.get(2));
+
+	}
+
+	@Test(timeout = 10)
+	public void velocidad() throws InterruptedException {
+
+		Thread.sleep(1000);
+		assertTrue(true);
 	}
 
 }
