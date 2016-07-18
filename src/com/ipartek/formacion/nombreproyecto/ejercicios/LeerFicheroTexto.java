@@ -12,6 +12,8 @@ public class LeerFicheroTexto {
 	public static void main(String[] args) {
 		
 		String  pathFichero = "data/personas.txt";
+		long tiempo = System.currentTimeMillis();
+		
 		
 		try {
 			FileReader fr = new FileReader(pathFichero);
@@ -19,6 +21,7 @@ public class LeerFicheroTexto {
 			String linea = "";
 			int cont = 0;
 			int contError = 0;
+			StringBuffer sb = new StringBuffer();	
 			ArrayList<Persona> p = new ArrayList<Persona>();
 			
 			while( (linea = br.readLine()) != null ){
@@ -31,16 +34,22 @@ public class LeerFicheroTexto {
 				//contar cuantos se crean y cuantos dan error (si <7 = MAL)
 				if(campos.length == 7){
 					p.add( new Persona(campos[0], campos[1], campos[2], campos[5], campos[4]));
-					cont++;
+					
 				}else{
 					contError++;
-				}				
+					sb.append(cont + ": " + linea);
+				}	
+				
+				cont++;
 				
 			}
 			
 			System.out.println("----------------------");
 			System.out.println("Personas leidas: " + cont);
 			System.out.println("Personas erroneas: " + contError);
+			System.out.println("Detalle lineas errones: " + sb.toString());
+			System.out.println("----------------------");
+			System.out.println("Tiempo de ejecucion: " + (System.currentTimeMillis() - tiempo + "ms"));
 			
 			
 			br.close();
