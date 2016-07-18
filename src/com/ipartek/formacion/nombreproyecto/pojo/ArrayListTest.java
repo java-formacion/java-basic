@@ -3,6 +3,7 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -29,6 +30,17 @@ public class ArrayListTest {
 		paises.add(ITALIA);
 		paises.add(FRANCIA);
 		paises.add(FRANCIA);
+		
+		
+		//Realizar Iterator y contar elementos
+		int cont = 0;
+		String paisActual = "";
+		Iterator<String> it = paises.iterator();
+		while (it.hasNext()){
+			cont++;
+			paisActual = (String) it.next();
+		}
+		assertEquals(4, cont);
 		
 		assertEquals(4, paises.size());
 		

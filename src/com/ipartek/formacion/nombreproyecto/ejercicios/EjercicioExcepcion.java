@@ -18,21 +18,21 @@ public class EjercicioExcepcion {
 	}
 	
 	public static void metodoB() throws Exception{
-		System.out.println("Iniciado método B");
+		System.out.println("Iniciado mï¿½todo B");
 		metodoC();
-		System.out.println("Terminado método B");
+		System.out.println("Terminado mï¿½todo B");
 	}
 
 	@SuppressWarnings("null")
 	public static void metodoC() throws Exception{
 		
-		System.out.println("Iniciado método C");
+		System.out.println("Iniciado mï¿½todo C");
 		
 		try {		
 			Object o = null;
 			o.toString();
 			
-			System.out.println("Terminado correctamente método C");
+			System.out.println("Terminado correctamente mï¿½todo C");
 			
 		} catch (NullPointerException e){
 			System.out.println("Peta Null");

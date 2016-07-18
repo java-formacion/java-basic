@@ -12,7 +12,7 @@ package com.ipartek.formacion.nombreproyecto.pojo;
  * @author Ander Uraga Real
  *
  */
-public class Candidato {
+public class Candidato{
 
 	
 	//atributos
@@ -30,7 +30,7 @@ public class Candidato {
 		this.dni = "";
 	}
 	
-	//constructor con parámetros
+	//constructor con parï¿½metros
 	public Candidato(String nombre, String dni) {
 		this();
 		this.nombre = Utilidades.capitalizar(nombre);
