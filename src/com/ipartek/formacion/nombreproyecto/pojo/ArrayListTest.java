@@ -65,4 +65,13 @@ public class ArrayListTest {
 		
 	}
 
+	
+	@Test(timeout=1)
+	public void testVelocidad() throws InterruptedException{
+	
+		//lo suspendemos un determinado tiempo. En este caso, para que supere nuestro timeout
+        Thread.sleep(2);
+		assertTrue(true);
+		
+	}
 }

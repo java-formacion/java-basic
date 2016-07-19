@@ -167,4 +167,20 @@ public class Utilidades {
 		 public static float round(float d, int decimalPlace) {
 	         return BigDecimal.valueOf(d).setScale(decimalPlace,BigDecimal.ROUND_HALF_UP).floatValue();
 	    }
+		 
+		 
+		 public static String tiempoEmpleado(long duracion){
+			 
+			 String resultado = "";
+			 
+			 long minutos = 0;
+			 long segundos = 0;
+			 
+			 minutos = duracion/60000;
+			 segundos = (duracion%60000)/1000;
+			 
+			 resultado = "Tiempo empleado " + minutos + " minutos " + segundos + " segundos";
+			 
+			 return resultado;
+		 }
 }

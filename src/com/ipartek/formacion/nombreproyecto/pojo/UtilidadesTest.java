@@ -91,5 +91,13 @@ public class UtilidadesTest {
 	}
 	
 	
+	@Test
+	public void testTiempoEmpleado(){
+		
+		assertEquals("Tiempo empleado 1 minutos 1 segundos",Utilidades.tiempoEmpleado(61000));
+		assertEquals("Tiempo empleado 1 minutos 0 segundos",Utilidades.tiempoEmpleado(60000));
+		assertEquals("Tiempo empleado 1 minutos 6 segundos",Utilidades.tiempoEmpleado(66000));
+	
+	}
 	
 }
