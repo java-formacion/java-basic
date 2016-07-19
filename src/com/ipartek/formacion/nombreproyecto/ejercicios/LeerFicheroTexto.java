@@ -15,12 +15,12 @@ public class LeerFicheroTexto {
 
 	private static final String DRIVER   = "com.mysql.jdbc.Driver";
 	private static final String SERVER   = "127.0.0.1";
-	private static final String DATABASE = "personas";
+	private static final String DATABASE = "javabasic";
 	private static final String USUARIO  = "root";
 	private static final String PASS     = "";
 	private static final String PORT     = "3306";
 
-	private static String insert_persona = "INSERT INTO `personas`.`persona` (`nombre`, `email`) VALUES ( ? , ? );";
+	private static String insert_persona = "INSERT INTO `persona` (`nombre`, `email`) VALUES ( ? , ? );";
 	
 	
 	public static void main(String[] args) {
@@ -80,7 +80,15 @@ public class LeerFicheroTexto {
 			System.out.println("Detalle lineas Erroneas: ");
 			System.out.println( sb.toString() );
 			System.out.println("----------------------------------------");
-			System.out.println("Tiempo: " + ( System.currentTimeMillis() - tiempo ) + " ms");
+			
+			long duracion = System.currentTimeMillis() - tiempo; 
+			long millis = duracion % 1000;
+			long second = (duracion / 1000) % 60;
+			long minute = (duracion / (1000 * 60)) % 60;			
+
+			String time = String.format("%02d min %02d seg %d ms",  minute, second, millis);
+			
+			System.out.println("Tiempo: " + time);
 			System.out.println("----------------------------------------");
 			
 			
