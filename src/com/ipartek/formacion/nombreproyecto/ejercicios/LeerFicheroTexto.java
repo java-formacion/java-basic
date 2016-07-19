@@ -21,7 +21,7 @@ public class LeerFicheroTexto {
 	private static final String PORT = "3306";
 
 	private static String insert_persona = "INSERT INTO `personas`.`persona` (`nombre`, `email`) VALUES (?, ?);";
-	private static String truncate_persona = "TRUNCATE persona;";
+	private static String truncate_persona = "TRUNCATE `persona`;";
 	private static String resetear_autoincrement = "ALTER TABLE persona AUTO_INCREMENT = 1;";
 
 	public static void main(String[] args) {
@@ -97,12 +97,14 @@ public class LeerFicheroTexto {
 				System.out.println("Detalle lineas Erroneas: ");
 				System.out.println(sb.toString());
 				System.out.println("----------------------------------------");
-				
-				System.out.println("Tiempo: " + (String.format("%d min, %d sec", 
-					    TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - tiempo),
-					    TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis() - tiempo) - 
-					    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - tiempo)
-					    ))));
+
+				System.out
+						.println(
+								"Tiempo: " + (String.format("%d min, %d sec",
+										TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis()
+												- tiempo),
+						TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis() - tiempo) - TimeUnit.MINUTES
+								.toSeconds(TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - tiempo)))));
 				System.out.println("----------------------------------------");
 				br.close();
 				fr.close();
@@ -116,7 +118,7 @@ public class LeerFicheroTexto {
 				pstDelete = conexion.prepareStatement(truncate_persona);
 				pstAutoZero = conexion.prepareStatement(resetear_autoincrement);
 				// ejecutar sentencia
-				if (pstDelete.executeUpdate() == 0) {
+				if (pstDelete.execute()) {
 					pstAutoZero.executeUpdate();
 					System.out.println("Eliminados todos los registros");
 				} else {
