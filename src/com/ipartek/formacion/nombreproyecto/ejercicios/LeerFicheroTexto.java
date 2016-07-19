@@ -8,123 +8,151 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
-
-import com.ipartek.formacion.nombreproyecto.pojo.Persona;
-
+import java.util.concurrent.TimeUnit;
 
 public class LeerFicheroTexto {
 
-	private static final String DRIVER   = "com.mysql.jdbc.Driver";
-	private static final String SERVER   = "127.0.0.1";
-	private static final String DATABASE = "personas";
-	private static final String USUARIO  = "root";
-	private static final String PASS     = "";
-	private static final String PORT     = "3306";
+	// CONSTANTES PARA CONEXION DE BBDD
+	private static final String DRIVER = "com.mysql.jdbc.Driver";
+	private static final String SERVER = "127.0.0.1";
+	private static final String DATABASE = "javabasic";
+	private static final String USER = "root";
+	private static final String PASS = "";
+	private static final String PORT = "3306";
 
-	private static String insert_persona = "INSERT INTO `personas`.`persona` (`nombre`, `email`) VALUES ( ? , ? );";
-	
-	
+	private static String insert_persona = "INSERT INTO `persona` (`nombre`, `email`) VALUES (?, ?);";
+	private static String truncate_persona = "TRUNCATE `persona`;";
+	private static String resetear_autoincrement = "ALTER TABLE persona AUTO_INCREMENT = 1;";
+
 	public static void main(String[] args) {
-		
+
+		// preguntar si quiere insertar o eliminar
+		System.out.println("Seleccione insertar '1' o eliminar '2'");
+		// declarar scaner para introducir datos por consola
+		Scanner scanner = new Scanner(System.in);
+		int op = scanner.nextInt();
+
 		long tiempo = System.currentTimeMillis();
 		String pathFichero = "data/personas.txt";
-		Connection con = null;
-		PreparedStatement pst = null;
-		
-		try{
-			
-			//Cargar Driver BaseDatos MySql
+
+		// objeto Connection para crear la conexion
+		Connection conexion = null;
+
+		try {
+
+			// Cargar driver BD MySql
 			Class.forName(DRIVER);
-			
-			//Establecer conexion
-			con = DriverManager.getConnection("jdbc:mysql://"+SERVER+":"+PORT+"/"+DATABASE, USUARIO, PASS );
-			
+
+			// Conexion con BBDD
+			conexion = DriverManager.getConnection("jdbc:mysql://" + SERVER + ":" + PORT + "/" + DATABASE, USER, PASS);
+
 			FileReader fr = new FileReader(pathFichero);
 			BufferedReader br = new BufferedReader(fr);
 			String linea = "";
-			Persona p = null;
-			int cont = 0;
-			int contInsert = 0;
-			int contErrores = 0;
 			String campos[];
 			StringBuffer sb = new StringBuffer();
-			
-			
-			System.out.println("Existen datos en la Base de Datos");
-			System.out.println("Quieres borrarlos (SI=s / NO=n");
-			Scanner scanner = new Scanner(System.in);
-			//int op =  scanner.nextInt();
-			
-			if(scanner = "s"){
-				truncate `persona`;
-				
-			}
-			
-			while( (linea = br.readLine()) != null ){
-				
-				System.out.println(linea);
-				campos = linea.split(",");
-				if ( campos.length == 7){
-					
-					//Preparar sentencia SQL y sustituimos "?" por valores					
-					pst = con.prepareStatement( insert_persona );
-					pst.setString(1, campos[0]);
-					pst.setString(2, campos[4]);
-					
-					//Ejecutar Sentencia
-					if ( pst.executeUpdate() == 1 ){
-						 contInsert++;						
-					}else{
+
+			int cont = 0;
+			int contErrores = 0;
+
+			int contInsert = 0;
+			int contInsertError = 0;
+
+			if (op == 1) {
+
+				while ((linea = br.readLine()) != null) {
+
+					campos = linea.split(",");
+					if (campos.length == 7) {
+
+						// preparar comando sql a null
+						PreparedStatement pst = null;
+
+						// preparar sentencia sql y sustituimos interrogantes
+						// por
+						// valores
+						pst = conexion.prepareStatement(insert_persona);
+						pst.setString(1, campos[0]);
+						pst.setString(2, campos[4]);
+
+						// ejecutar sentencia
+						if (pst.executeUpdate() == 1) {
+							contInsert++;
+							
+							
+							
+						} else {
+							contInsertError++;
+							sb.append(cont + ": " + linea);
+						}
+
+					} else {
 						contErrores++;
-						sb.append( cont + ": " + linea);
-					}					
-					pst = null;
-					
-				}else{
-					contErrores++;
-					sb.append( cont + ": " + linea);
-				}						
-				cont++;				
+						sb.append(cont + ": " + linea);
+					}
+					cont++;
+				}
+				System.out.println("-----------------------------");
+				System.out.println("Personas leidas: " + cont);
+				System.out.println("Personas insertadas: " + contInsert);
+				System.out.println("Personas insertadas incorectamente: " + contInsertError);
+				System.out.println("Personas Erroneas: " + contErrores);
+				System.out.println("Detalle lineas Erroneas: ");
+				System.out.println(sb.toString());
+				System.out.println("----------------------------------------");
+
+				System.out
+						.println(
+								"Tiempo: " + (String.format("%d min, %d sec",
+										TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis()
+												- tiempo),
+						TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis() - tiempo) - TimeUnit.MINUTES
+								.toSeconds(TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - tiempo)))));
+				System.out.println("----------------------------------------");
+				br.close();
+				fr.close();
+			} else if (op == 2) {
+				// preparar comandos sql a null
+				PreparedStatement pstDelete = null;
+				PreparedStatement pstAutoZero = null;
+				// preparar sentencia sql y sustituimos interrogantes
+				// por
+				// valores
+				pstDelete = conexion.prepareStatement(truncate_persona);
+				pstAutoZero = conexion.prepareStatement(resetear_autoincrement);
+				// ejecutar sentencia
+				if (pstDelete.execute()) {
+					pstAutoZero.executeUpdate();
+					System.out.println("Eliminados todos los registros");
+				} else {
+					System.out.println("No se ha eliminado ningun registro, tabla vacia");
+				}
+			} else {
+				System.out.println("Opcion no valida");
 			}
-			
-			System.out.println("-----------------------------");
-			System.out.println("Personas leidas: " + cont );
-			System.out.println("Personas Insertadas: " + contInsert );
-			System.out.println("Personas Erroneas: " + contErrores );
-			System.out.println("Detalle lineas Erroneas: ");
-			System.out.println( sb.toString() );
-			System.out.println("----------------------------------------");
-			System.out.println("Tiempo: " + ( System.currentTimeMillis() - tiempo ) + " ms");
-			System.out.println("----------------------------------------");
-			
-			
-			br.close();
-			fr.close();
-		
-		}catch ( SQLException e){			
-			System.out.println("Fallo Base Datos");
+
+		} catch (SQLException e) {
+			System.out.println("Fallo de base de datos");
 			e.printStackTrace();
-			
-		}catch ( ClassNotFoundException e){			
-			System.out.println("No existe DRIVER mysql: " + DRIVER);
-			
-		}catch(FileNotFoundException e){
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
 			System.out.println("No se puede leer fichero " + pathFichero);
 			e.printStackTrace();
-			
-		}catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("Excepcion no controlada");
 			e.printStackTrace();
-			
-		}finally{
-			try{
-				con.close();
-			}catch(SQLException e){
-				System.out.println("Excepcion Cerrando Conexion");
+
+			// cerrar conexion
+		} finally {
+			try {
+				conexion.close();
+			} catch (SQLException e) {
+				System.out.println("Excepcion cerrando conexion");
 				e.printStackTrace();
-			}	
-		}	
-		
+			}
+		}
+
 	}
-	
+
 }
