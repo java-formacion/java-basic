@@ -118,12 +118,9 @@ public class LeerFicheroTexto {
 				pstDelete = conexion.prepareStatement(truncate_persona);
 				pstAutoZero = conexion.prepareStatement(resetear_autoincrement);
 				// ejecutar sentencia
-				if (pstDelete.execute()) {
-					pstAutoZero.executeUpdate();
-					System.out.println("Eliminados todos los registros");
-				} else {
-					System.out.println("No se ha eliminado ningun registro, tabla vacia");
-				}
+				pstDelete.executeUpdate();
+				pstAutoZero.executeUpdate();
+
 			} else {
 				System.out.println("Opcion no valida");
 			}
