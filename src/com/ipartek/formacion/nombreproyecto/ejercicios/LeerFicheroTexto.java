@@ -15,12 +15,12 @@ public class LeerFicheroTexto {
 	// CONSTANTES PARA CONEXION DE BBDD
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
 	private static final String SERVER = "127.0.0.1";
-	private static final String DATABASE = "personas";
+	private static final String DATABASE = "javabasic";
 	private static final String USER = "root";
 	private static final String PASS = "";
 	private static final String PORT = "3306";
 
-	private static String insert_persona = "INSERT INTO `personas`.`persona` (`nombre`, `email`) VALUES (?, ?);";
+	private static String insert_persona = "INSERT INTO `persona` (`nombre`, `email`) VALUES (?, ?);";
 	private static String truncate_persona = "TRUNCATE `persona`;";
 	private static String resetear_autoincrement = "ALTER TABLE persona AUTO_INCREMENT = 1;";
 
