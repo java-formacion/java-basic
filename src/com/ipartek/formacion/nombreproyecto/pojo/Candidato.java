@@ -1,15 +1,14 @@
 package com.ipartek.formacion.nombreproyecto.pojo;
 
-
 public class Candidato extends Persona {
 
 	//Constantes
 	/**
-	 * NOTA_MINIMA {@code int} constante que guarda la nota mínima que se puede asignar
+	 * NOTA_MINIMA {@code int} constante que guarda la nota mï¿½nima que se puede asignar
 	 */
 	public static final int NOTA_MINIMA = 0;
 	/**
-	 * NOTA_MAXIMA {@code int} constante que guarda la nota máxima que se puede asignar
+	 * NOTA_MAXIMA {@code int} constante que guarda la nota mï¿½xima que se puede asignar
 	 */
 	public static final int NOTA_MAXIMA = 10;
 	/**
@@ -68,7 +67,7 @@ public class Candidato extends Persona {
 	}
 	
 	/**
-	 * Método estaAceptado nos indica si un Candidato2 está aceptado
+	 * Mï¿½todo estaAceptado nos indica si un Candidato2 estï¿½ aceptado
 	 * Para ello, su nota debe ser igual o mayor a NOTA_APOROBADO
 	 *
 	 * @return aceptado {@code boolean}

@@ -3,6 +3,7 @@ package com.ipartek.formacion.nombreproyecto.pojo;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -15,7 +16,6 @@ public class ArrayListTest {
 
 	@Test
 	public void test() {
-		
 				
 		assertNull (paises);
 		
@@ -26,11 +26,16 @@ public class ArrayListTest {
 		assertTrue ( paises.isEmpty() );
 		assertEquals (0 , paises.size());
 		
-		
 		paises.add(ALEMANIA);
 		paises.add(ITALIA);
 		paises.add(FRANCIA);
 		paises.add(FRANCIA);
+		
+		Iterator<String> it = paises.iterator();
+		
+		while (it.hasNext()) {
+			it.next();
+		}
 		
 		assertEquals (4 , paises.size());
 		
@@ -52,9 +57,6 @@ public class ArrayListTest {
 		assertEquals (ALEMANIA,  paises.get(0));
 		assertEquals (FRANCIA,  paises.get(1));
 		assertEquals (ITALIA,  paises.get(2));
-		
-		
-		
 	}
 
 }
