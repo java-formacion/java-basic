@@ -7,38 +7,35 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Scanner;
-
-import com.ipartek.formacion.nombreproyecto.enumeraciones.Vaso;
-import com.ipartek.formacion.nombreproyecto.pojo.Persona;
 
 
 public class LeerFicheroTexto {
 	
 	private static final String DRIVER   = "com.mysql.jdbc.Driver";
 	private static final String SERVER   = "127.0.0.1";
-	private static final String DATABASE = "personas";
+	private static final String DATABASE = "javabasic";
 	private static final String USER     = "root";
 	private static final String PASS     = "";
 	private static final String PORT     = "3306";
+	private static final String PATH_FICHERO = "data/personas.txt";
 	
-	private static String insert_persona = "INSERT INTO `personas`.`persona` (`nombre`, `email`) VALUES (?, ?);";
+	private static String insert_persona = "INSERT INTO `persona` (`nombre`, `email`) VALUES (?, ?);";
+	
 
 	
 	public static void main(String[] args) {
 
 		Connection con = null;	
-		PreparedStatement pst = null;
+		PreparedStatement pst = null;		
 		
-		String  pathFichero = "data/personas2.txt";
-		long tiempo = System.currentTimeMillis();
+		long tiempo = 0;
+		long minutos = 0;
+		long segundos = 0;
+		long miliseg = 0;
 		
 		try {
 			Scanner scanner = new Scanner(System.in);
-						
-			
-
 			
 			//Cargar Driver BaseDatos MySQL
 			Class.forName(DRIVER);
@@ -48,7 +45,7 @@ public class LeerFicheroTexto {
 			
 			
 			
-			FileReader fr = new FileReader(pathFichero);
+			FileReader fr = new FileReader(PATH_FICHERO);
 			BufferedReader br = new BufferedReader(fr);
 			String linea = "";
 			int cont = 0;
@@ -59,6 +56,7 @@ public class LeerFicheroTexto {
 			//Vaciar tabla?
 			System.out.println("¿Vaciar tabla? NO=0, SI=1"); 
 			int limpiar = scanner.nextInt();
+			tiempo = System.currentTimeMillis();
 			if(limpiar==1){
 				pst = con.prepareStatement("TRUNCATE `persona`;");
 				pst.executeUpdate();
@@ -100,21 +98,27 @@ public class LeerFicheroTexto {
 				
 			}
 			
+			tiempo = System.currentTimeMillis() - tiempo;			
+			minutos = tiempo / (60 * 1000) % 60;
+			segundos = tiempo / 1000 % 60;
+			miliseg = tiempo % 1000;
+			
 			System.out.println("----------------------");
 			System.out.println("Personas leidas: " + cont);
 			System.out.println("Personas insertadas: " + contInsert);
 			System.out.println("Personas erroneas: " + contError);
 			System.out.println("Detalle lineas errones: " + sb.toString());
-			System.out.println("----------------------");
-			System.out.println("Tiempo de ejecucion: " + ((System.currentTimeMillis() - tiempo) + " ms"));
+			System.out.println("----------------------" + tiempo);
+			System.out.println("Tiempo de ejecucion: " + minutos + " minutos " + segundos + " segundos " + miliseg + " milisegundos");
 			
 			
 			br.close();
 			fr.close();
+			scanner.close();
 			
 			
 		} catch (FileNotFoundException e) {
-			System.out.println("No se puede leer el fichero " + pathFichero);
+			System.out.println("No se puede leer el fichero " + PATH_FICHERO);
 			e.printStackTrace();
 			
 		}catch(SQLException e){
