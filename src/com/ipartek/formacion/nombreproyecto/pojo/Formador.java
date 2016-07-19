@@ -23,23 +23,24 @@ public class Formador extends Persona implements Icurso {
 
 	@Override
 	public boolean asignarCurso(Curso curso) {
-		cursos.add(curso);
+		this.cursos.add(curso);
 		return true;
 	}
 
 	@Override
 	public boolean desAsignarCurso(Curso curso) {
-		if (cursos.isEmpty() && !(curso == null)) {
+		if (this.cursos.isEmpty() && !(curso == null)) {
 			return false;
 		} else {
-			cursos.remove(curso);
+			this.cursos.remove(curso);
 		}
 		return true;
 	}
 
 	@Override
 	public ArrayList<Curso> getCursos() {
-		return cursos;
+		return this.cursos;
 	}
-
+	
+	
 }

@@ -1,12 +1,13 @@
 package com.ipartek.formacion.nombreproyecto;
 
 import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
+import com.ipartek.formacion.nombreproyecto.pojo.CandidatoExcepcion;
 import com.ipartek.formacion.nombreproyecto.pojo.Libro;
 import com.ipartek.formacion.nombreproyecto.pojo.Perro;
 
 public class HelloWorld {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CandidatoExcepcion {
 		
 		
 		//instanciar objeto<Candidato>

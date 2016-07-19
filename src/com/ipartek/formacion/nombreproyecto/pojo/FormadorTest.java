@@ -10,12 +10,9 @@ import org.junit.Test;
 
 public class FormadorTest {
 
-	Formador f;
-	
-	Curso cJava = new Curso("jav2857", "Java", 500);
-	Curso cPhP = new Curso("php534","PHP",750);
-	Curso cAndroid = new Curso("andr34534", "Android", 380);
-	
+	Formador fCon,fSin;
+	Curso cJava, cAndroid, cPhP;
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -26,44 +23,61 @@ public class FormadorTest {
 
 	@Before
 	public void setUp() throws Exception {
-		f = new Formador("Marta", "Lekue", "Arriaga", "33333333C", "marta@gmail.com");
+		fCon = new Formador("Marta", "Lekue", "Arriaga", "33333333C", "marta@gmail.com");
+		fSin = new Formador("Ernesto", "Pecho", "Presto", "33333333C", "marta@gmail.com");
+		cJava = new Curso("jav2857", "Java", 500);
+		cPhP = new Curso("php534", "PHP", 750);
+		cAndroid = new Curso("andr34534", "Android", 380);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		f = null;
+		fCon = null;
+		fSin = null;
 	}
 
+	@Test
+	public void testConConstructor() {
+		assertEquals("Marta", fCon.getNombre());
+		assertEquals("Lekue", fCon.getApellido1());
+		assertEquals("Arriaga", fCon.getApellido2());
+		assertEquals("33333333C", fCon.getDni());
+		assertEquals("marta@gmail.com", fCon.getEmail());
+
+		assertNotNull(fCon.getCursos());
+		assertEquals(0, fCon.getCursos().size());
+		
+		// formador con cursos null
+		//Formador fCursosNull = new Formador("Ernesto", "Pecho", "Presto", "33333333C", "marta@gmail.com");
+		
+		
+	}
 	
 	@Test
-	public void testConstructor() {
-		assertEquals("Marta", f.getNombre());
-		assertEquals("Lekue", f.getApellido1());
-		assertEquals("Arriaga", f.getApellido2());
-		assertEquals("33333333C", f.getDni());
-		assertEquals("marta@gmail.com", f.getEmail());
+	public void testSinConstructor() {
+		assertEquals("Ernesto", fSin.getNombre());
+		assertEquals("Pecho", fSin.getApellido1());
+		assertEquals("Presto", fSin.getApellido2());
+		assertEquals("33333333C", fSin.getDni());
+		assertEquals("marta@gmail.com", fSin.getEmail());
 
-		assertNotNull(f.getCursos());
-		assertEquals(0, f.getCursos().size());
+		assertNotNull(fCon.getCursos());
+		assertEquals(3, fCon.getCursos().size());
 	}
-	
+
 	@Test
 	public void testConstructorParametros() {
-		assertNotNull(f);
-		assertTrue(f.asignarCurso(cJava));
-		assertTrue(f.asignarCurso(cAndroid));
-		
-		assertTrue(f.desAsignarCurso(cJava));
-		assertEquals(1, f.getCursos().size());
-		
-		assertTrue(f.asignarCurso(cPhP));
-		//System.out.println( f.getCursos().toString());
-		assertTrue(f.desAsignarCurso(cJava));
-	
+		assertNotNull(fCon);
+		assertTrue(fCon.asignarCurso(cJava));
+		assertTrue(fCon.asignarCurso(cAndroid));
+
+		assertTrue(fCon.desAsignarCurso(cJava));
+		assertEquals(1, fCon.getCursos().size());
+
+		assertTrue(fCon.asignarCurso(cPhP));
+		// System.out.println( f.getCursos().toString());
+		assertTrue(fCon.desAsignarCurso(cJava));
+
 	}
-	
-	
-	
-	
 
 }

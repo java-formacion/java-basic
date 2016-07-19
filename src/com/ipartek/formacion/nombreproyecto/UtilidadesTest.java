@@ -4,7 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.ipartek.formacion.nombreproyecto.pojo.Candidato;
+
+import com.ipartek.formacion.nombreproyecto.pojo.CandidatoExcepcion;
 
 public class UtilidadesTest {
 
@@ -27,20 +28,17 @@ public class UtilidadesTest {
 	
 	
 	@Test
-	public void testVarios() {
-		assertEquals( "Ander", "   Ander    ".trim() );
+	public void testVarios() throws CandidatoExcepcion {
 		
-		
+		/*assertEquals( "Ander", "   Ander    ".trim() );
 		Candidato c = new Candidato("", "", "", "", "", 0 );
 		assertTrue ( c instanceof Candidato ); 
-		
 		Candidato c1 = new Candidato("", "", "", "", "", 0 );
-		
 		assertNotEquals("No son iguales, aunque lo parezcan", c, c1 );
+		assertFalse( c.equals(c1) );*/
+		//Candidato sel = new Candidato("Sel", "Demasie", "Saturada", "543857349f", "saturacionMaxima@gmail.com", -2); 
 		
-		assertFalse( c.equals(c1) );
 		
-				
 	}
 	
 	@Test

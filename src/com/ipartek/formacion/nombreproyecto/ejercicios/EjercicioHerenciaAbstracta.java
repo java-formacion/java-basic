@@ -3,7 +3,7 @@ package com.ipartek.formacion.nombreproyecto.ejercicios;
 import com.ipartek.formacion.nombreproyecto.pojo.DosRombos;
 import com.ipartek.formacion.nombreproyecto.pojo.Linea;
 import com.ipartek.formacion.nombreproyecto.pojo.LineaColor;
-import com.ipartek.formacion.nombreproyecto.pojo.ObjetoGrafico;
+
 
 
 public class EjercicioHerenciaAbstracta {
