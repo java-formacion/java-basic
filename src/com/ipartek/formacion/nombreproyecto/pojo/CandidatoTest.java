@@ -5,13 +5,15 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.io.Serializable;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CandidatoTest {
+public class CandidatoTest extends Object {
 
 	Candidato c;
 	
@@ -32,7 +34,13 @@ public class CandidatoTest {
 			
 			fail("No deberia haber fallado el SetUp");
 		}	
+		/*
+		 * 
+		 */
 		
+		/**
+		 * 
+		 */
 	}
 
 	@After
@@ -70,7 +78,7 @@ public class CandidatoTest {
 		
 		try{
 			c.setNota(Candidato.NOTA_MINIMA - 1);  //asigno al Candidato una nota de -1 (MINIMA-1)
-			fail("No se lanzó CandidatoException"); //ponemos esta linea porque si no funciona la ejecutara
+			fail("No se lanzï¿½ CandidatoException"); //ponemos esta linea porque si no funciona la ejecutara
 		}catch( CandidatoException e){
 			assertEquals(CandidatoException.EXCEPTION_RANGO_NOTA_MIN, e.getMessage());
 		}
